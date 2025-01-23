@@ -2,7 +2,7 @@ import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useMemo, useRef } f
 import { Animated, Pressable } from 'react-native';
 import GorhomBottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
-const BottomSheetV2: FC<{
+const BottomSheet: FC<{
   showBottomSheet: boolean;
   setShowBottomSheet: Dispatch<SetStateAction<string | null>>;
   themeColors: any;
@@ -72,4 +72,4 @@ const BottomSheetV2: FC<{
   );
 };
 
-export default BottomSheetV2;
+export default BottomSheet;

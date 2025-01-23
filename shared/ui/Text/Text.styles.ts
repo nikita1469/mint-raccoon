@@ -1,3 +1,4 @@
+import { PALLETE_COLORS } from "@/shared/const";
 import { FONTS } from "@/shared/const/FONTS";
 import { StyleSheet } from "react-native";
 
@@ -23,7 +24,13 @@ export const sizeStyles = StyleSheet.create({
 
 export const colorStyles = StyleSheet.create({
   white: {
-    color: "#FFF",
+    color: PALLETE_COLORS.dark.white,
+  },
+  grey: {
+    color: PALLETE_COLORS.dark.grey,
+  },
+  textTransparent: {
+    color: PALLETE_COLORS.dark.textTransparent,
   },
 });
 

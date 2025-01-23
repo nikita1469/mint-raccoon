@@ -1,28 +1,52 @@
-import { StyleSheet } from 'react-native';
-import { PALLETE_COLORS } from '@/shared/const';
-import { Theme } from '@/shared/model/types';
+import { PALLETE_COLORS } from "@/shared/const";
+import { StyleSheet } from "react-native";
+
+const baseButton = {
+  flexGrow: 1,
+  flexDirection: "row" as const,
+  alignItems: "center" as const,
+  justifyContent: "center" as const,
+};
+
+const SIZES = {
+  large: 50,
+  medium: 45,
+  small: 35,
+} as const;
 
 export const styles = StyleSheet.create({
-  buttonWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 12,
-    paddingHorizontal: 16,
-  },
+  buttonWrapper: baseButton,
   disabled: {
-    opacity: 0.5,
-    color: PALLETE_COLORS.light.white,
+    backgroundColor: PALLETE_COLORS.dark.grey,
+  },
+});
+
+export const backgroundStyles = StyleSheet.create({
+  primary: {
+    backgroundColor: PALLETE_COLORS.dark.primary,
+  },
+  secondary: {
+    backgroundColor: PALLETE_COLORS.dark.secondary,
   },
 });
 
 export const sizeStyles = StyleSheet.create({
+  large: {
+    borderRadius: 12,
+    flexGrow: 1,
+    minHeight: SIZES.large,
+    maxHeight: SIZES.large,
+  },
   medium: {
-    minHeight: 48,
-    maxHeight: 48,
+    borderRadius: 10,
+    flexGrow: 1,
+    minHeight: SIZES.medium,
+    maxHeight: SIZES.medium,
   },
   small: {
-    minHeight: 33,
-    maxHeight: 33,
+    minWidth: 120,
+    borderRadius: 7,
+    height: SIZES.small,
+    paddingHorizontal: 18,
   },
 });

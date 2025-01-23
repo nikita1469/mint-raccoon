@@ -22,6 +22,11 @@ export const MainStack = () => {
       borderTopWidth: 0,
       gap: 4,
       paddingHorizontal: 28,
+      shadowColor: "#000000",
+      shadowOffset: { width: 10, height: 10 },
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 10,
     },
     tabBarItemStyle: {
       top: 4,

@@ -1,21 +1,13 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Text as RNText } from "react-native";
-import { PaletteColor } from "@/shared/model/types";
 import { sizeStyles, fontStyles, colorStyles } from "./Text.styles";
-
-interface TextProps {
-  children: ReactNode;
-  weight?: 400 | 500 | 700 | 900;
-  size?: string;
-  font?: string;
-  color?: PaletteColor;
-  style?: any;
-}
+import { TextProps } from "./Text.types";
 
 const Text: FC<TextProps> = ({
   children,
   weight,
-  size = "common",
+  align = "left",
+  size = "base",
   font = "regular",
   color = "white",
   style,
@@ -23,11 +15,12 @@ const Text: FC<TextProps> = ({
   return (
     <RNText
       style={[
-        size && sizeStyles[size as string],
+        size && sizeStyles[size],
         color && colorStyles[color],
         weight && { fontWeight: weight },
         font && fontStyles[font],
         style && style,
+        align && { textAlign: align },
       ]}
     >
       {children}

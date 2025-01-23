@@ -1,9 +1,10 @@
-import { BellIcon } from "@/shared/ui/icons";
-import BurgerMenuIcon from "@/shared/ui/icons/BurgerMenuIcon";
+import { BellIcon, BurgerIcon } from "@/shared/ui/icons";
 import { TouchableOpacity, View } from "react-native";
 import { styles } from "./Header.styles";
 import { Image } from "expo-image";
 import { Text } from "@/shared/ui";
+import { LinearGradient } from "expo-linear-gradient";
+import { PALLETE_COLORS } from "@/shared/const";
 
 interface HeaderProps {
   isLogo?: boolean;
@@ -29,7 +30,7 @@ const Header = ({ isLogo, title }: HeaderProps) => {
         </Text>
       )}
       <TouchableOpacity>
-        <BurgerMenuIcon />
+        <BurgerIcon />
       </TouchableOpacity>
     </View>
   );

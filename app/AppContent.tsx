@@ -19,7 +19,7 @@ const AppContent = () => {
     <GestureHandlerRootView>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={PATHS.MAIN_STACK}
+          initialRouteName={PATHS.MENU}
           screenOptions={{
             headerShown: false,
           }}
