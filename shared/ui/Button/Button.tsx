@@ -1,7 +1,6 @@
 import { type FC } from "react";
 import { ActivityIndicator, TouchableOpacity } from "react-native";
 import { backgroundStyles, sizeStyles, styles } from "./Button.styles";
-import { PALLETE_COLORS } from "@/shared/const";
 import { ButtonProps } from "./Button.types";
 import Text from "../Text/Text";
 

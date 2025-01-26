@@ -28,6 +28,11 @@ export const backgroundStyles = StyleSheet.create({
   secondary: {
     backgroundColor: PALLETE_COLORS.dark.secondary,
   },
+  outlined: {
+    backgroundColor: PALLETE_COLORS.dark.black,
+    borderWidth: 1,
+    borderColor: PALLETE_COLORS.dark.textTransparent,
+  },
 });
 
 export const sizeStyles = StyleSheet.create({
@@ -46,7 +51,8 @@ export const sizeStyles = StyleSheet.create({
   small: {
     minWidth: 120,
     borderRadius: 7,
-    height: SIZES.small,
+    minHeight: SIZES.small,
+    maxHeight: SIZES.small,
     paddingHorizontal: 18,
   },
 });

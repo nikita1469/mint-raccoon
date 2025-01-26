@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { PALLETE_COLORS, PATHS } from "@/shared/const";
 import { Text } from "@/shared/ui";
-import { ProfileScreen, HomeScreen, MenuScreen, OrderScreen } from "@/screens";
-import { HomeIcon, MenuIcon, OrderIcon, UserIcon } from "@/shared/ui/icons";
+import { ProfileScreen, HomeScreen, MenuScreen, TablesScreen } from "@/screens";
+import { HomeIcon, MenuIcon, ListIcon, UserIcon } from "@/shared/ui/icons";
 import { StyleSheet, View } from "react-native";
 import Tab from "./ui/Tab";
 
@@ -39,7 +39,7 @@ export const MainStack = () => {
 
   return (
     <BottomTabs.Navigator
-      initialRouteName={PATHS.ORDER}
+      initialRouteName={PATHS.TABLES}
       screenOptions={mainStackStyles}
     >
       <BottomTabs.Screen
@@ -79,11 +79,11 @@ export const MainStack = () => {
         }}
       />
       <BottomTabs.Screen
-        name={PATHS.ORDER}
-        component={OrderScreen}
+        name={PATHS.TABLES}
+        component={TablesScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <OrderIcon />;
+            return <ListIcon />;
           },
           tabBarLabel: ({ focused }) => (
             <Tab focused={focused} label="Заказ" xOffset={-26} />

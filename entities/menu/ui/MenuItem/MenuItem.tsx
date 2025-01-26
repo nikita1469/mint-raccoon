@@ -1,5 +1,4 @@
 import { DishIcon, MinusIcon, PlusIcon } from "@/shared/ui/icons";
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
 import { LikeIcon } from "@/shared/ui/icons";
 import React, { FC, useState } from "react";
 import { TouchableOpacity } from "react-native";
@@ -51,15 +50,15 @@ const MenuItem: FC<MenuItemProps> = ({ item, cartItems, setCartItems }) => {
     });
   };
 
-  const handleLike = () => {
+  const handleLikeButton = () => {
     setIsLiked(!isLiked);
   };
 
   return (
-    <BlurView gap={10}>
+    <BlurView gap={10} isTouchable containerStyle={{ flex: 1 }}>
       <View style={styles.dishContainer}>
         <DishIcon />
-        <TouchableOpacity style={styles.likeButton}>
+        <TouchableOpacity style={styles.likeButton} onPress={handleLikeButton}>
           <LikeIcon />
         </TouchableOpacity>
       </View>
@@ -71,20 +70,46 @@ const MenuItem: FC<MenuItemProps> = ({ item, cartItems, setCartItems }) => {
         <Text color="textTransparent">{item.name}</Text>
       </View>
 
-      <View style={styles.addToCartContainer}>
+      <View
+        style={styles.addToCartContainer}
+        onStartShouldSetResponder={() => true}
+        onTouchEnd={(e) => e.stopPropagation()}
+      >
         {isInCart ? (
           <>
-            <TouchableOpacity onPress={handleRemoveFromCart}>
+            <TouchableOpacity
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                height: 40,
+              }}
+              onPress={handleRemoveFromCart}
+            >
               <MinusIcon />
             </TouchableOpacity>
             <Text color="grey">{isInCart.count}</Text>
-            <TouchableOpacity onPress={handleAddToCart}>
+            <TouchableOpacity
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                height: 40,
+              }}
+              onPress={handleAddToCart}
+            >
               <PlusIcon />
             </TouchableOpacity>
           </>
         ) : (
           <TouchableOpacity
-            style={{ flex: 1, alignItems: "center" }}
+            activeOpacity={0.8}
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              height: 40,
+            }}
             disabled={!item.available}
             onPress={handleAddToCart}
           >

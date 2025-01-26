@@ -32,12 +32,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   addToCartContainer: {
+    gap: "18%",
     backgroundColor: PALLETE_COLORS.dark.white,
     borderRadius: 25,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 15,
     justifyContent: "space-between",
   },
 });

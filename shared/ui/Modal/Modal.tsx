@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Animated, Pressable, Modal as RNModal, View } from "react-native";
 
-import { Theme } from "@/shared/model/types";
 import { createStyles } from "./Modal.styles";
 import { PALLETE_COLORS } from "@/shared/const";
 

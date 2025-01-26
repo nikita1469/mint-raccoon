@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Layout, Tabs } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { styles } from "./MenuScreen.styles";
-import { MenuItemsList } from "@/features";
+import { MenuItemSheet, MenuItemsList } from "@/features";
 import { SortIcon } from "@/shared/ui/icons";
 
 const MENU_TABS = [
@@ -40,6 +40,20 @@ const MENU_ITEMS = [
     weight: "280 г",
     available: true,
   },
+  {
+    id: "3",
+    name: "Котлеты из индейки с йогуртовым соусом",
+    price: 850,
+    weight: "120/30 г",
+    available: true,
+  },
+  {
+    id: "4",
+    name: "Карбонара",
+    price: 750,
+    weight: "280 г",
+    available: true,
+  },
 ];
 
 interface MenuScreenProps {}
@@ -51,24 +65,27 @@ const MenuScreen: FC<MenuScreenProps> = () => {
   );
 
   return (
-    <Layout>
-      <Header title="Меню" />
-      <View style={styles.filtersWrapper}>
-        <TouchableOpacity style={styles.sortButton}>
-          <SortIcon />
-        </TouchableOpacity>
-        <Tabs
-          data={MENU_TABS}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
+    <Fragment>
+      <Layout>
+        <Header title="Меню" isBellButton isBurgerButton />
+        <View style={styles.filtersWrapper}>
+          <TouchableOpacity style={styles.sortButton}>
+            <SortIcon />
+          </TouchableOpacity>
+          <Tabs
+            data={MENU_TABS}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        </View>
+        <MenuItemsList
+          data={MENU_ITEMS}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
         />
-      </View>
-      <MenuItemsList
-        data={MENU_ITEMS}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
-    </Layout>
+      </Layout>
+      <MenuItemSheet />
+    </Fragment>
   );
 };
 

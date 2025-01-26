@@ -3,20 +3,27 @@ import { BlurView, Button, Layout, Select, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { ScrollView, View } from "react-native";
 
-import { styles } from "./OrderScreen.styles";
+import { styles } from "./TablesScreen.styles";
 import { HallsList } from "./ui";
 import { HALLS_DATA } from "./const";
+import { useNavigation } from "@react-navigation/native";
+import { PATHS } from "@/shared/const";
 
-interface OrderScreenProps {}
+interface TablesScreenProps {}
 
-const OrderScreen: FC<OrderScreenProps> = () => {
+const TablesScreen: FC<TablesScreenProps> = () => {
+  const navigation = useNavigation();
   const [selectedHall, setSelectedHall] = useState<string>(HALLS_DATA[0].id);
+
+  const handleBooking = () => {
+    navigation.navigate(PATHS.BOOKING as never);
+  };
 
   return (
     <Layout>
-      <Header isLogo />
-      <ScrollView contentContainerStyle={styles.orderScroll}>
-        <BlurView>
+      <Header isLogo isBellButton isBurgerButton />
+      <ScrollView contentContainerStyle={styles.tablesScroll}>
+        <BlurView containerStyle={{ flex: 1 }}>
           <Text size="header" font="delaGothicOne" align="center">
             Забронируйте столик
           </Text>
@@ -32,7 +39,7 @@ const OrderScreen: FC<OrderScreenProps> = () => {
             <Text>Выберите свободный столик</Text>
             <View style={styles.tablesSchemaContainer}></View>
           </View>
-          <Button variant="secondary" onPress={() => {}}>
+          <Button variant="secondary" onPress={handleBooking}>
             Забронировать
           </Button>
         </BlurView>
@@ -41,4 +48,4 @@ const OrderScreen: FC<OrderScreenProps> = () => {
   );
 };
 
-export default OrderScreen;
+export default TablesScreen;

@@ -16,6 +16,10 @@ export const sizeStyles = StyleSheet.create({
   large: {
     fontSize: 16,
   },
+  title: {
+    fontSize: 20,
+    lineHeight: 26,
+  },
   header: {
     fontSize: 24,
     lineHeight: 32,
@@ -28,6 +32,9 @@ export const colorStyles = StyleSheet.create({
   },
   grey: {
     color: PALLETE_COLORS.dark.grey,
+  },
+  textPrimary: {
+    color: PALLETE_COLORS.dark.textPrimary,
   },
   textTransparent: {
     color: PALLETE_COLORS.dark.textTransparent,

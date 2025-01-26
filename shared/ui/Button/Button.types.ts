@@ -1,7 +1,7 @@
 import { PALLETE_COLORS } from "@/shared/const";
 import { type StyleProp, type ViewStyle } from "react-native";
 
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "outlined";
 export type ButtonSize = "large" | "medium" | "small";
 
 export interface ButtonProps {

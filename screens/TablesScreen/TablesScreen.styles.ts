@@ -2,7 +2,7 @@ import { PALLETE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  orderScroll: {
+  tablesScroll: {
     flex: 1,
     marginHorizontal: 20,
     marginBottom: 60,
