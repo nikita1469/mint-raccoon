@@ -9,4 +9,5 @@ export enum PATHS {
   MAIN_STACK = "/main-stack",
   EDIT_PROFILE = "/edit-profile",
   PLACING_ORDER = "/placing-order",
+  REGISTRATION = "/registration",
 }

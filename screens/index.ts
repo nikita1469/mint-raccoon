@@ -7,6 +7,7 @@ import EditProfileScreen from "./EditProfileScreen/EditProfileScreen";
 import BookingsScreen from "./BookingsScreen/BookingsScreen";
 import BookingScreen from "./BookingScreen/BookingScreen";
 import PlacingOrderScreen from "./PlacingOrderScreen/PlacingOrderScreen";
+import RegistrationScreen from "./RegistrationScreen/RegistrationScreen";
 
 export {
   AuthScreen,
@@ -18,4 +19,5 @@ export {
   BookingsScreen,
   BookingScreen,
   PlacingOrderScreen,
+  RegistrationScreen,
 };

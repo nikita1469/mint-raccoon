@@ -10,7 +10,6 @@ import {
   PALLETE_COLORS,
   PATHS,
 } from "@/shared/const";
-import { Image } from "expo-image";
 import { BookingItem } from "@/entities/booking/ui";
 import { useNavigation } from "@react-navigation/native";
 interface ProfileScreenProps {}
