@@ -1,26 +1,25 @@
-import { StyleSheet } from 'react-native';
-import { ThemeColors } from '@/shared/model/types';
+import { StyleSheet } from "react-native";
+import { ThemeColors } from "@/shared/model/types";
+import { PALLETE_COLORS } from "@/shared/const";
 
-export const createStyles = (themeColors: ThemeColors) => {
-  return StyleSheet.create({
-    overlay: {
-      flex: 1,
-      backgroundColor: 'transparent',
-    },
-    popup: {
-      position: 'absolute',
-      width: 151,
-      padding: 10,
-      backgroundColor: themeColors.accentGrey,
-      borderRadius: 12,
-      gap: 12,
-      justifyContent: 'center',
-      alignItems: 'center',
-      shadowColor: '#000000',
-      shadowOffset: { width: 0, height: 0 },
-      shadowOpacity: 0.25,
-      shadowRadius: 10,
-      elevation: 5,
-    },
-  });
-};
+export const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: "transparent",
+  },
+  popup: {
+    position: "absolute",
+    width: 151,
+    padding: 10,
+    backgroundColor: PALLETE_COLORS.background,
+    borderRadius: 12,
+    gap: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    elevation: 5,
+  },
+});

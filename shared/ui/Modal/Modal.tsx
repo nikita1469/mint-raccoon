@@ -1,9 +1,6 @@
 import { FC } from "react";
 import { Animated, Pressable, Modal as RNModal, View } from "react-native";
-
-import { Theme } from "@/shared/model/types";
-import { createStyles } from "./Modal.styles";
-import { PALLETE_COLORS } from "@/shared/const";
+import { styles } from "./Modal.styles";
 
 interface ModalProps {
   isDrawerVisible: boolean;
@@ -18,8 +15,6 @@ const Modal: FC<ModalProps> = ({
   animatedHeight,
   children,
 }) => {
-  const styles = createStyles(PALLETE_COLORS.dark);
-
   return (
     <RNModal
       animationType="fade"

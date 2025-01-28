@@ -1,3 +1,4 @@
+import { PALLETE_COLORS } from "@/shared/const";
 import { FONTS } from "@/shared/const/FONTS";
 import { StyleSheet } from "react-native";
 
@@ -15,6 +16,10 @@ export const sizeStyles = StyleSheet.create({
   large: {
     fontSize: 16,
   },
+  title: {
+    fontSize: 20,
+    lineHeight: 26,
+  },
   header: {
     fontSize: 24,
     lineHeight: 32,
@@ -23,7 +28,19 @@ export const sizeStyles = StyleSheet.create({
 
 export const colorStyles = StyleSheet.create({
   white: {
-    color: "#FFF",
+    color: PALLETE_COLORS.white,
+  },
+  grey: {
+    color: PALLETE_COLORS.grey,
+  },
+  secondary: {
+    color: PALLETE_COLORS.secondary,
+  },
+  textPrimary: {
+    color: PALLETE_COLORS.textPrimary,
+  },
+  textTransparent: {
+    color: PALLETE_COLORS.textTransparent,
   },
 });
 

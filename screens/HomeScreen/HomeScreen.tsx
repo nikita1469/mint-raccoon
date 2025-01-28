@@ -7,7 +7,7 @@ interface HomeScreenProps {}
 const HomeScreen: FC<HomeScreenProps> = () => {
   return (
     <Layout>
-      <Header isLogo />
+      <Header isLogo isBellButton isBurgerButton />
     </Layout>
   );
 };

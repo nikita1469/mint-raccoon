@@ -3,6 +3,10 @@ export enum PATHS {
   HOME = "/home",
   PROFILE = "/profile",
   MENU = "/menu",
-  ORDER = "/order",
+  TABLES = "/tables",
+  BOOKING = "/booking",
+  BOOKINGS = "/bookings",
   MAIN_STACK = "/main-stack",
+  EDIT_PROFILE = "/edit-profile",
+  PLACING_ORDER = "/placing-order",
 }

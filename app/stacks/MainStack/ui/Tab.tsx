@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   tab: {
     position: "absolute",
     top: -33,
-    backgroundColor: PALLETE_COLORS.dark.secondary,
+    backgroundColor: PALLETE_COLORS.secondary,
     width: 80,
     height: 46,
     borderRadius: 23,

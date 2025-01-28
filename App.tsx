@@ -6,7 +6,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { View } from "react-native";
 
-// Предотвращаем автоматическое скрытие сплэш-скрина
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {

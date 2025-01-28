@@ -1,51 +1,61 @@
-import { ReactNode } from 'react';
-import { TouchableOpacity, Text, ActivityIndicator } from 'react-native';
-import { PALLETE_COLORS } from '@/shared/const';
-import { PaletteColor } from '@/shared/model/types';
-import { sizeStyles, styles } from './Button.styles';
+import { type FC } from "react";
+import { ActivityIndicator, TouchableOpacity } from "react-native";
+import { backgroundStyles, sizeStyles, styles } from "./Button.styles";
+import { ButtonProps } from "./Button.types";
+import Text from "../Text/Text";
 
-interface ButtonProps {
-  children: ReactNode | string;
-  onPress: () => void;
-  size?: 'medium' | 'small';
-  backgroundColor?: PaletteColor;
-  textColor?: PaletteColor;
-  flex?: 'grow' | 'shrink';
-  disabled?: boolean;
-  isLoading?: boolean;
-  style?: object;
-}
-
-const Button = ({
+export const Button: FC<ButtonProps> = ({
   children,
   onPress,
-  size = 'medium',
-  flex = 'grow',
+  size = "medium",
   style,
-  backgroundColor = PALLETE_COLORS.light.lightGreen,
-  textColor = PALLETE_COLORS.light.white,
+  variant = "primary",
+  textColor,
   disabled = false,
-  isLoading,
-}: ButtonProps) => {
+  isLoading = false,
+}) => {
+  const buttonStyles = [
+    styles.buttonWrapper,
+    sizeStyles[size],
+    variant && backgroundStyles[variant],
+    (disabled || isLoading) && styles.disabled,
+    style,
+  ];
+
+  const handlePress = () => {
+    if (!disabled && !isLoading) {
+      onPress();
+    }
+  };
+
+  const renderContent = () => {
+    if (isLoading) {
+      return <ActivityIndicator size="small" />;
+    }
+
+    if (typeof children === "string") {
+      return (
+        <Text color="white" font="bold" size="large">
+          {children}
+        </Text>
+      );
+    }
+
+    return children;
+  };
+
   return (
     <TouchableOpacity
-      onPress={disabled || isLoading ? undefined : onPress}
-      style={[
-        styles.buttonWrapper,
-        flex === 'grow' ? { flexGrow: 1 } : { flexShrink: 1 },
-        { backgroundColor },
-        size && sizeStyles[size],
-        disabled && styles.disabled,
-        style && style,
-      ]}
+      activeOpacity={0.8}
+      onPress={handlePress}
+      style={buttonStyles}
+      disabled={disabled || isLoading}
     >
-      {isLoading ? (
-        <ActivityIndicator size='small' color={PALLETE_COLORS.light.white} />
-      ) : (
-        <Text style={[disabled && styles.disabled, { fontWeight: 500, color: textColor }]}>{children}</Text>
-      )}
+      {renderContent()}
     </TouchableOpacity>
   );
 };
+
+Button.displayName = "Button";
 
 export default Button;
