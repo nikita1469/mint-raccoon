@@ -24,6 +24,7 @@ const MenuItemsList: FC<MenuItemsListProps> = ({
     <FlatList
       data={data}
       renderItem={renderMenuItem}
+      keyExtractor={(item) => item.id}
       contentContainerStyle={styles.menuList}
       numColumns={2}
       columnWrapperStyle={{ gap: 10 }}

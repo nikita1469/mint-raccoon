@@ -37,7 +37,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
         >
           <AvatarIcon />
           <Pressable style={styles.deleteButton} onPress={() => {}}>
-            <PlusIcon color={PALLETE_COLORS.dark.black} size={10} />
+            <PlusIcon color={PALLETE_COLORS.black} size={10} />
           </Pressable>
         </TouchableOpacity>
         <BlurView>

@@ -32,7 +32,7 @@ const OrderItem = ({ data, isLast }: OrderItemProps) => {
         ]}
       >
         <View style={styles.dishContainer}>
-          <DishIcon size={32} color={PALLETE_COLORS.dark.white} />
+          <DishIcon size={32} color={PALLETE_COLORS.white} />
         </View>
         <View style={styles.orderItemInfo}>
           <Text>{name}</Text>

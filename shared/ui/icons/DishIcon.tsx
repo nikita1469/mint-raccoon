@@ -4,7 +4,7 @@ import { PALLETE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 const DishIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.dark.textTransparent,
+  color = PALLETE_COLORS.textTransparent,
   size = 64,
 }) => (
   <Svg width={size} height={size} viewBox="0 0 64 64" fill="none">

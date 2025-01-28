@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   blurViewWrapper: {
     borderRadius: 25,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.dark.alternate,
+    borderColor: PALLETE_COLORS.alternate,
     overflow: "hidden",
   },
   blurView: {

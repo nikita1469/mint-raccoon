@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     height: 200,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.dark.grey,
+    borderColor: PALLETE_COLORS.grey,
   },
   sticker: {
     position: "absolute",
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   bookingRowContainer: {
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderRadius: 5,

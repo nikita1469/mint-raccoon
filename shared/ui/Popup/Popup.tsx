@@ -12,7 +12,7 @@ interface PopupProps {
 }
 
 const Popup: FC<PopupProps> = ({ isVisible, onClose, position, children }) => {
-  const styles = createStyles(PALLETE_COLORS.dark);
+  const styles = createStyles(PALLETE_COLORS);
 
   return (
     <Modal visible={isVisible} transparent={true} onRequestClose={onClose}>

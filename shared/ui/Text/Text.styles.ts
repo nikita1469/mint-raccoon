@@ -28,16 +28,19 @@ export const sizeStyles = StyleSheet.create({
 
 export const colorStyles = StyleSheet.create({
   white: {
-    color: PALLETE_COLORS.dark.white,
+    color: PALLETE_COLORS.white,
   },
   grey: {
-    color: PALLETE_COLORS.dark.grey,
+    color: PALLETE_COLORS.grey,
+  },
+  secondary: {
+    color: PALLETE_COLORS.secondary,
   },
   textPrimary: {
-    color: PALLETE_COLORS.dark.textPrimary,
+    color: PALLETE_COLORS.textPrimary,
   },
   textTransparent: {
-    color: PALLETE_COLORS.dark.textTransparent,
+    color: PALLETE_COLORS.textTransparent,
   },
 });
 

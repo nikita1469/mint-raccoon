@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 30,
-    color: PALLETE_COLORS.dark.white,
+    color: PALLETE_COLORS.white,
     paddingHorizontal: 0,
     fontSize: 16,
   },

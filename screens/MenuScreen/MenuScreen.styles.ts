@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sortButton: {
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
     borderRadius: 20,
     height: 40,
     width: 40,

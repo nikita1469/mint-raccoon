@@ -9,8 +9,8 @@ import Popup from "./Popup/Popup";
 import Select from "./Select/Select";
 import Tabs from "./Tabs/Tabs";
 import Text from "./Text/Text";
-import TextField from "./TextField/TextField";
 import BlurView from "./BlurView/BlurView";
+import Counter from "./Counter/Counter";
 
 export {
   BottomSheet,
@@ -23,7 +23,7 @@ export {
   Loader,
   Tabs,
   Text,
-  TextField,
   Select,
   BlurView,
+  Counter,
 };

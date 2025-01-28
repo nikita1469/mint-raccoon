@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   dishContainer: {
     width: CARD_WIDTH - 32,
     height: CARD_WIDTH - 32,
-    backgroundColor: PALLETE_COLORS.dark.primary,
+    backgroundColor: PALLETE_COLORS.primary,
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   addToCartContainer: {
     gap: "18%",
-    backgroundColor: PALLETE_COLORS.dark.white,
+    backgroundColor: PALLETE_COLORS.white,
     borderRadius: 25,
     height: 40,
     flexDirection: "row",

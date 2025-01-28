@@ -31,8 +31,8 @@ const HallsList: FC<HallsListProps> = ({ selectedHall, setSelectedHall }) => {
               end={{ x: 1, y: 0 }}
               colors={
                 id === selectedHall
-                  ? PALLETE_COLORS.dark.gradient
-                  : PALLETE_COLORS.dark.gradientTransparent
+                  ? PALLETE_COLORS.gradient
+                  : PALLETE_COLORS.gradientTransparent
               }
               style={[
                 styles.gradient,

@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
+import { ScrollView, View } from "react-native";
 import { BlurView, Button, Layout, Select, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
-import { ScrollView, View } from "react-native";
-
-import { styles } from "./TablesScreen.styles";
-import { HallsList } from "./ui";
+import { HallsList, SakuraHall } from "./ui";
 import { HALLS_DATA } from "./const";
 import { useNavigation } from "@react-navigation/native";
 import { PATHS } from "@/shared/const";
+
+import { styles } from "./TablesScreen.styles";
 
 interface TablesScreenProps {}
 
@@ -37,7 +37,9 @@ const TablesScreen: FC<TablesScreenProps> = () => {
           />
           <View style={styles.tablesSchemaWrapper}>
             <Text>Выберите свободный столик</Text>
-            <View style={styles.tablesSchemaContainer}></View>
+            <View style={styles.tablesSchemaContainer}>
+              <SakuraHall />
+            </View>
           </View>
           <Button variant="secondary" onPress={handleBooking}>
             Забронировать

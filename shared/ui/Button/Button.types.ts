@@ -9,7 +9,7 @@ export interface ButtonProps {
   onPress: () => void;
   size?: ButtonSize;
   variant?: ButtonVariant;
-  textColor?: keyof typeof PALLETE_COLORS.dark;
+  textColor?: keyof typeof PALLETE_COLORS;
   disabled?: boolean;
   isLoading?: boolean;
   style?: StyleProp<ViewStyle>;

@@ -1,9 +1,10 @@
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, View } from "react-native";
+import { styles } from "./Loader.styles";
 
 const Loader = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <ActivityIndicator color='white' />
+    <View style={styles.loaderWrapper}>
+      <ActivityIndicator color="white" />
     </View>
   );
 };

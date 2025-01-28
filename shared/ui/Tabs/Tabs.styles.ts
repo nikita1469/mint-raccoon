@@ -13,12 +13,11 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
-    
   },
   activeTab: {
-    backgroundColor: PALLETE_COLORS.dark.secondary,
+    backgroundColor: PALLETE_COLORS.secondary,
   },
   inactiveTab: {
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
   },
 });

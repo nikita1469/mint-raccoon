@@ -3,7 +3,7 @@ import Svg, { Path, Rect } from "react-native-svg";
 import { PALLETE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
-const BurgerIcon: FC<IconProps> = ({ color = PALLETE_COLORS.dark.white }) => (
+const BurgerIcon: FC<IconProps> = ({ color = PALLETE_COLORS.white }) => (
   <Svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <Rect x="4" y="5" width="24" height="2" rx="1" fill={color} />
     <Path

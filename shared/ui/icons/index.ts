@@ -14,6 +14,10 @@ import TimeIcon from "./TimeIcon";
 import AvatarIcon from "./AvatarIcon";
 import ListIcon from "./ListIcon";
 import ArrowBackIcon from "./ArrowBackIcon";
+import TableTwoSeats from "./TableTwoSeats";
+import TableFourSeats from "./TableFourSeats";
+import HallDividerLarge from "./HallDividerLarge";
+import HallDividerSmall from "./HallDividerSmall";
 
 export {
   BellIcon,
@@ -32,4 +36,8 @@ export {
   TimeIcon,
   AvatarIcon,
   ArrowBackIcon,
+  TableTwoSeats,
+  TableFourSeats,
+  HallDividerLarge,
+  HallDividerSmall,
 };

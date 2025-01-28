@@ -44,14 +44,14 @@ const EditProfileScreen: FC<EditProfileScreenProps> = () => {
               style={styles.input}
               editable={!isDisabled}
               secureTextEntry={field.id === "password" && !showPassword}
-              placeholderTextColor={PALLETE_COLORS.dark.textTransparent}
+              placeholderTextColor={PALLETE_COLORS.textTransparent}
             />
             {field.id === "password" && (
               <TouchableOpacity
                 style={styles.eyeButton}
                 onPress={() => setShowPassword(!showPassword)}
               >
-                {/* <EyeIcon color={PALLETE_COLORS.dark.white} /> */}
+                {/* <EyeIcon color={PALLETE_COLORS.white} /> */}
               </TouchableOpacity>
             )}
           </View>

@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   orderInfoContainer: {
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
     padding: 10,
     borderRadius: 5,
     alignItems: "stretch",

@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     borderRadius: 5,
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
     minHeight: 36,
     padding: 8,
   },

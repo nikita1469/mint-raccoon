@@ -65,13 +65,13 @@ const BottomSheet: FC<{
           {showBottomSheet && (
             <GorhomBottomSheet
               backgroundStyle={{
-                backgroundColor: PALLETE_COLORS.dark.primary,
+                backgroundColor: PALLETE_COLORS.primary,
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,
               }}
               handleIndicatorStyle={{
                 width: 90,
-                backgroundColor: PALLETE_COLORS.dark.lightGrey,
+                backgroundColor: PALLETE_COLORS.lightGrey,
               }}
               snapPoints={snapPoints}
               onChange={(index) => {

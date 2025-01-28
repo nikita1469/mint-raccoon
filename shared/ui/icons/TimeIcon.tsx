@@ -30,7 +30,7 @@ import { IconProps } from "@/shared/model/types";
 </svg>;
 
 const TimeIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.dark.textTransparent,
+  color = PALLETE_COLORS.textTransparent,
 }) => (
   <Svg width="21" height="20" viewBox="0 0 21 20" fill="none">
     <G clip-path="url(#clip0_63_4346)">

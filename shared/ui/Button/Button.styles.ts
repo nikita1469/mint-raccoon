@@ -17,21 +17,21 @@ const SIZES = {
 export const styles = StyleSheet.create({
   buttonWrapper: baseButton,
   disabled: {
-    backgroundColor: PALLETE_COLORS.dark.grey,
+    backgroundColor: PALLETE_COLORS.grey,
   },
 });
 
 export const backgroundStyles = StyleSheet.create({
   primary: {
-    backgroundColor: PALLETE_COLORS.dark.primary,
+    backgroundColor: PALLETE_COLORS.primary,
   },
   secondary: {
-    backgroundColor: PALLETE_COLORS.dark.secondary,
+    backgroundColor: PALLETE_COLORS.secondary,
   },
   outlined: {
-    backgroundColor: PALLETE_COLORS.dark.black,
+    backgroundColor: PALLETE_COLORS.black,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.dark.textTransparent,
+    borderColor: PALLETE_COLORS.textTransparent,
   },
 });
 

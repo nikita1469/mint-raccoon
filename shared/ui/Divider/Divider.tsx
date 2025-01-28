@@ -5,7 +5,7 @@ import { PALLETE_COLORS } from "@/shared/const";
 
 interface DividerProps {
   color: Exclude<
-    keyof typeof PALLETE_COLORS.dark,
+    keyof typeof PALLETE_COLORS,
     "gradient" | "gradientTransparent"
   >;
 }
@@ -13,7 +13,7 @@ interface DividerProps {
 const Divider: FC<DividerProps> = ({ color }) => {
   return (
     <View
-      style={[styles.divider, { backgroundColor: PALLETE_COLORS.dark[color] }]}
+      style={[styles.divider, { backgroundColor: PALLETE_COLORS[color] }]}
     ></View>
   );
 };

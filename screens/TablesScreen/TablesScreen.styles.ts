@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   tablesScroll: {
-    flex: 1,
     marginHorizontal: 20,
     marginBottom: 60,
   },
@@ -18,8 +17,9 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   tablesSchemaContainer: {
+    padding: 10,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.dark.white,
+    borderColor: PALLETE_COLORS.white,
     borderRadius: 15,
     flex: 1,
   },

@@ -1,8 +1,7 @@
 import { FC, ReactNode } from "react";
 import { ImageBackground, SafeAreaView, View } from "react-native";
 
-import { createStyles } from "./Layout.styles";
-import { PALLETE_COLORS } from "@/shared/const";
+import { styles } from "./Layout.styles";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,8 +10,6 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, imageType = "stars" }) => {
-  const styles = createStyles(PALLETE_COLORS.dark);
-
   return (
     <View style={styles.layoutWrapper}>
       <ImageBackground

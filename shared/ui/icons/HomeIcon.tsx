@@ -3,7 +3,7 @@ import Svg, { Path } from "react-native-svg";
 import { PALLETE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
-const HomeIcon: FC<IconProps> = ({ color = PALLETE_COLORS.dark.white }) => (
+const HomeIcon: FC<IconProps> = ({ color = PALLETE_COLORS.white }) => (
   <Svg
     width="22"
     height="22"

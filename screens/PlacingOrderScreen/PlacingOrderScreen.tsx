@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
+import { FC, useState } from "react";
+import { BlurView, Button, Counter, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { PALLETE_COLORS } from "@/shared/const";
 import { ScrollView, View } from "react-native";
@@ -14,6 +14,9 @@ interface PlacingOrderScreenProps {}
 
 const PlacingOrderScreen: FC<PlacingOrderScreenProps> = () => {
   const navigation = useNavigation();
+
+  const [enableOrderTime, setEnableOrderTime] = useState(false);
+  const [orderTime, setOrderTime] = useState(5);
 
   return (
     <Layout>
@@ -52,21 +55,30 @@ const PlacingOrderScreen: FC<PlacingOrderScreenProps> = () => {
           </View>
           <View style={styles.orderTimeContainer}>
             <Switch
-              value={false}
-              onValueChange={() => {}}
+              value={enableOrderTime}
+              onValueChange={setEnableOrderTime}
               trackColor={{
-                false: PALLETE_COLORS.dark.grey,
-                true: PALLETE_COLORS.dark.primary,
+                false: PALLETE_COLORS.grey,
+                true: PALLETE_COLORS.primary,
               }}
             />
-            <Text color="textTransparent">Время подачи заказа</Text>
-            <Text color="textTransparent">5 мин</Text>
+            <Text color={enableOrderTime ? "white" : "textTransparent"}>
+              Время подачи заказа
+            </Text>
+            <Counter
+              value={orderTime}
+              setValue={setOrderTime}
+              step={5}
+              minValue={5}
+              maxValue={55}
+              disabled={!enableOrderTime}
+            />
           </View>
           <Button
             onPress={() => navigation.navigate(PATHS.PLACING_ORDER as never)}
             variant="secondary"
           >
-            Оформить заказ
+            Оплатить
           </Button>
         </BlurView>
       </ScrollView>

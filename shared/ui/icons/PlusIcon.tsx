@@ -4,7 +4,7 @@ import { PALLETE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 const PlusIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.dark.grey,
+  color = PALLETE_COLORS.grey,
   size = 14,
 }) => (
   <Svg width={size} height={size} viewBox="0 0 14 14" fill="none">

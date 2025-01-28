@@ -3,9 +3,7 @@ import Svg, { Path } from "react-native-svg";
 import { PALLETE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
-const ArrowBackIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.dark.white,
-}) => (
+const ArrowBackIcon: FC<IconProps> = ({ color = PALLETE_COLORS.white }) => (
   <Svg width="43" height="48" viewBox="0 0 43 48" fill="none">
     <Path
       d="M2.14258 13.1422H28.1426C28.6949 13.1422 29.1426 13.5899 29.1426 14.1422C29.1426 14.6944 28.6949 15.1422 28.1426 15.1422H2.14258V13.1422Z"

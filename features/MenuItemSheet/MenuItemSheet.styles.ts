@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   descriptionWrapper: {
     height: "60%",
-    backgroundColor: PALLETE_COLORS.dark.background,
+    backgroundColor: PALLETE_COLORS.background,
     position: "relative",
   },
   descriptionContainer: {
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     height: 100,
     flexDirection: "row",
     gap: 10,
-    backgroundColor: PALLETE_COLORS.dark.transparent,
+    backgroundColor: PALLETE_COLORS.transparent,
     paddingHorizontal: 20,
     paddingVertical: 25,
     borderRadius: 20,
@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 12,
-    backgroundColor: PALLETE_COLORS.dark.secondary,
+    backgroundColor: PALLETE_COLORS.secondary,
     justifyContent: "center",
     alignItems: "center",
   },

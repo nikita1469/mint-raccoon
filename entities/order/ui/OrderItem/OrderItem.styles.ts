@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: PALLETE_COLORS.dark.primary,
+    backgroundColor: PALLETE_COLORS.primary,
   },
   orderItemContainer: {
     flexDirection: "row",

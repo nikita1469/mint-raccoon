@@ -18,7 +18,7 @@ const ARROW_DIRECTION = {
 
 const ArrowIcon: FC<
   IconProps & { direction?: keyof typeof ARROW_DIRECTION }
-> = ({ color = PALLETE_COLORS.dark.white, direction = "down" }) => (
+> = ({ color = PALLETE_COLORS.white, direction = "down" }) => (
   <Svg
     width={ARROW_DIRECTION[direction].width}
     height={ARROW_DIRECTION[direction].height}

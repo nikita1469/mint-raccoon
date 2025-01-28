@@ -12,7 +12,7 @@ export const MainStack = () => {
   const mainStackStyles = {
     headerShown: false,
     tabBarStyle: {
-      backgroundColor: PALLETE_COLORS.dark.primary,
+      backgroundColor: PALLETE_COLORS.primary,
       position: "absolute" as const,
       bottom: 20,
       height: 54,

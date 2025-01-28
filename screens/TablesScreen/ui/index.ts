@@ -1,3 +1,4 @@
 import HallsList from "./HallsList/HallsList";
+import SakuraHall from "./SakuraHall/SakuraHall";
 
-export { HallsList };
+export { HallsList, SakuraHall };

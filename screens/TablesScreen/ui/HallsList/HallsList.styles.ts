@@ -17,11 +17,11 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
     flex: 1,
     minWidth: "45%",
-    borderColor: PALLETE_COLORS.dark.transparent,
+    borderColor: PALLETE_COLORS.transparent,
   },
   hallItemInactive: {
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.dark.primary,
+    borderColor: PALLETE_COLORS.primary,
   },
   gradient: {
     paddingVertical: 5,
@@ -31,5 +31,5 @@ export const styles = StyleSheet.create({
   gradientInactive: {
     paddingVertical: 4,
     paddingHorizontal: 11,
-  }, 
+  },
 });

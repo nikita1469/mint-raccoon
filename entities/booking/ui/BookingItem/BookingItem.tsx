@@ -37,7 +37,7 @@ const BookingItem = ({ date, table, isActive }: BookingItemProps) => {
         style={[
           styles.bookingButton,
           isActive && {
-            backgroundColor: PALLETE_COLORS.dark.primary,
+            backgroundColor: PALLETE_COLORS.primary,
           },
         ]}
       >
