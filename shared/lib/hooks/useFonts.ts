@@ -12,8 +12,6 @@ export const useFonts = () => {
         "Manrope-ExtraLight": require("@/shared/assets/fonts/Manrope-ExtraLight.ttf"),
         "Manrope-Regular": require("@/shared/assets/fonts/Manrope-Regular.ttf"),
         "Manrope-SemiBold": require("@/shared/assets/fonts/Manrope-SemiBold.ttf"),
-
-        // добавьте другие начертания шрифтов по необходимости
       });
       setFontsLoaded(true);
     } catch (error) {
