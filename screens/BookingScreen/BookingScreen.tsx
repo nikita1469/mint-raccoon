@@ -9,20 +9,7 @@ import { PALLETE_COLORS, PATHS } from "@/shared/const";
 import { useNavigation } from "@react-navigation/native";
 import { OrderItem } from "@/entities/order/ui";
 import { ORDER_DATA } from "@/entities/order/const";
-
-const BOOKING_FIELDS_DATA = [
-  { id: "tableHall", label: "Столик/зал" },
-  { id: "date", label: "Дата" },
-  { id: "time", label: "Время" },
-  { id: "deposit", label: "Оплаченный депозит" },
-];
-
-const BOOKING_FORM_DATA = {
-  tableHall: "№1, Зал «Сакура» ",
-  date: "2025-01-25",
-  time: "12:00",
-  deposit: "3000₽",
-};
+import { BOOKING_FIELDS_DATA, BOOKING_FORM_DATA } from "./const";
 
 interface BookingScreenProps {}
 
