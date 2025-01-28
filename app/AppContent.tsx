@@ -8,12 +8,6 @@ import { MainStack } from "./stacks/MainStack/MainStack";
 const Stack = createNativeStackNavigator();
 
 const AppContent = () => {
-  // const { route } = useAuth();
-
-  // if (!route) {
-  //   return null;
-  // }
-
   return (
     <GestureHandlerRootView>
       <NavigationContainer>

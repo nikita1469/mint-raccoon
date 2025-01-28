@@ -1,5 +1,4 @@
-import { FC, Fragment } from "react";
-import { BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
+import { BlurView, Button, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { styles } from "./BookingScreen.styles";
 import { ScrollView, View } from "react-native";
@@ -9,11 +8,10 @@ import { PALLETE_COLORS, PATHS } from "@/shared/const";
 import { useNavigation } from "@react-navigation/native";
 import { OrderItem } from "@/entities/order/ui";
 import { ORDER_DATA } from "@/entities/order/const";
-import { BOOKING_FIELDS_DATA, BOOKING_FORM_DATA } from "./const";
+import { BOOKING_FIELDS_DATA } from "./const";
+import { BookingField, BookingSticker } from "./ui";
 
-interface BookingScreenProps {}
-
-const BookingScreen: FC<BookingScreenProps> = () => {
+const BookingScreen = () => {
   const navigation = useNavigation();
 
   return (
@@ -28,16 +26,7 @@ const BookingScreen: FC<BookingScreenProps> = () => {
             source={require("@/shared/assets/images/hall-image.png")}
             style={styles.bookingImage}
           />
-          <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            colors={PALLETE_COLORS.gradient}
-            style={styles.sticker}
-          >
-            <Text font="delaGothicOne" size="small">
-              ЗАЛ «САКУРА»
-            </Text>
-          </LinearGradient>
+          <BookingSticker title="ЗАЛ «САКУРА»" />
         </View>
         <BlurView>
           <Text font="delaGothicOne" color="textPrimary">
@@ -45,20 +34,11 @@ const BookingScreen: FC<BookingScreenProps> = () => {
           </Text>
           <View>
             {BOOKING_FIELDS_DATA.map(({ label, id }, index) => (
-              <Fragment key={id}>
-                <Divider color="textTransparent" />
-                <View style={styles.fieldWrapper}>
-                  <Text color="textTransparent" style={{ width: "50%" }}>
-                    {label}
-                  </Text>
-                  <Text>
-                    {BOOKING_FORM_DATA[id as keyof typeof BOOKING_FORM_DATA]}
-                  </Text>
-                </View>
-                {index === BOOKING_FIELDS_DATA.length - 1 && (
-                  <Divider color="textTransparent" />
-                )}
-              </Fragment>
+              <BookingField
+                id={id}
+                label={label}
+                isLast={index === BOOKING_FIELDS_DATA.length - 1}
+              />
             ))}
           </View>
         </BlurView>
