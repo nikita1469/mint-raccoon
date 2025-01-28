@@ -1,5 +1,5 @@
 import { MenuItem } from "@/entities/menu/ui";
-import { FC } from "react";
+import { FC, memo, useCallback } from "react";
 import { FlatList } from "react-native";
 import { styles } from "./MenuItemsList.styles";
 
@@ -16,8 +16,11 @@ const MenuItemsList: FC<MenuItemsListProps> = ({
   cartItems,
   setCartItems,
 }) => {
-  const renderMenuItem = ({ item }: { item: (typeof data)[0] }) => (
-    <MenuItem item={item} cartItems={cartItems} setCartItems={setCartItems} />
+  const renderMenuItem = useCallback(
+    ({ item }: { item: (typeof data)[0] }) => (
+      <MenuItem item={item} cartItems={cartItems} setCartItems={setCartItems} />
+    ),
+    [cartItems, setCartItems]
   );
 
   return (
@@ -32,4 +35,4 @@ const MenuItemsList: FC<MenuItemsListProps> = ({
   );
 };
 
-export default MenuItemsList;
+export default memo(MenuItemsList);

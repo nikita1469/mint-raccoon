@@ -15,19 +15,6 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: PALLETE_COLORS.grey,
   },
-  sticker: {
-    position: "absolute",
-    bottom: 15,
-    left: 15,
-    paddingVertical: 5,
-    paddingHorizontal: 12,
-    borderRadius: 5,
-  },
-  fieldWrapper: {
-    marginVertical: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
   bookingRowContainer: {
     backgroundColor: PALLETE_COLORS.transparent,
     paddingVertical: 8,
