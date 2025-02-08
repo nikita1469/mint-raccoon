@@ -4,7 +4,7 @@ import { View, TouchableOpacity } from "react-native";
 import { Text } from "@/shared/ui";
 
 import { styles } from "./BookingItem.styles";
-import { PALLETE_COLORS, PATHS } from "@/shared/const";
+import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { useNavigation } from "@react-navigation/native";
 
 interface BookingItemProps {
@@ -37,7 +37,7 @@ const BookingItem = ({ date, table, isActive }: BookingItemProps) => {
         style={[
           styles.bookingButton,
           isActive && {
-            backgroundColor: PALLETE_COLORS.primary,
+            backgroundColor: PALETTE_COLORS.primary,
           },
         ]}
       >

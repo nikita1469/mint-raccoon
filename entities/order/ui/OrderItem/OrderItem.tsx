@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { Divider, Text } from "@/shared/ui";
 import { DishIcon } from "@/shared/ui/icons";
 import { Fragment } from "react";
@@ -32,7 +32,7 @@ const OrderItem = ({ data, isLast }: OrderItemProps) => {
         ]}
       >
         <View style={styles.dishContainer}>
-          <DishIcon size={32} color={PALLETE_COLORS.white} />
+          <DishIcon size={32} color={PALETTE_COLORS.white} />
         </View>
         <View style={styles.orderItemInfo}>
           <Text>{name}</Text>

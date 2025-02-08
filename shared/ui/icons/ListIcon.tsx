@@ -13,10 +13,10 @@
 
 import { FC } from "react";
 import Svg, { Path } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
-const ListIcon: FC<IconProps> = ({ color = PALLETE_COLORS.white }) => (
+const ListIcon: FC<IconProps> = ({ color = PALETTE_COLORS.white }) => (
   <Svg
     width="22"
     height="22"

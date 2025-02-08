@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from "react";
 import { TouchableOpacity, View, TextInput } from "react-native";
 import { Divider, Text } from "@/shared/ui";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IProfileFieldProps } from "../../model/EditProfileScreeen.types";
 
 import { styles } from "./ProfileField.styles";
@@ -30,14 +30,14 @@ const ProfileField: FC<IProfileFieldProps> = ({
             style={styles.input}
             editable={!isDisabled}
             secureTextEntry={field.id === "password" && !showPassword}
-            placeholderTextColor={PALLETE_COLORS.textTransparent}
+            placeholderTextColor={PALETTE_COLORS.textTransparent}
           />
           {field.id === "password" && (
             <TouchableOpacity
               style={styles.eyeButton}
               onPress={() => setShowPassword(!showPassword)}
             >
-              {/* <EyeIcon color={PALLETE_COLORS.white} /> */}
+              {/* <EyeIcon color={PALETTE_COLORS.white} /> */}
             </TouchableOpacity>
           )}
         </View>

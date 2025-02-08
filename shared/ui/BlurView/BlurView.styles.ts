@@ -1,11 +1,11 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   blurViewWrapper: {
     borderRadius: 25,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.alternate,
+    borderColor: PALETTE_COLORS.alternate,
     overflow: "hidden",
   },
   blurView: {

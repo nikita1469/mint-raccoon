@@ -1,5 +1,5 @@
 import { TableFourSeats, TableTwoSeats } from "@/shared/ui/icons";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { Text } from "@/shared/ui";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 
@@ -29,7 +29,7 @@ const BookingTable = ({
           isVertical={isVertical}
           opacity={opacity}
           color={
-            pickedTable === id ? PALLETE_COLORS.secondary : PALLETE_COLORS.white
+            pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white
           }
         />
       ) : (
@@ -37,7 +37,7 @@ const BookingTable = ({
           isVertical={isVertical}
           opacity={opacity}
           color={
-            pickedTable === id ? PALLETE_COLORS.secondary : PALLETE_COLORS.white
+            pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white
           }
         />
       )}

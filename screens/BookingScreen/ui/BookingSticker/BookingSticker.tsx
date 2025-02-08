@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { Text } from "@/shared/ui";
 import { LinearGradient } from "expo-linear-gradient";
 import { styles } from "./BookingSticker.styles";
@@ -9,7 +9,7 @@ const BookingSticker: FC<{ title: string }> = ({ title }) => {
     <LinearGradient
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
-      colors={PALLETE_COLORS.gradient}
+      colors={PALETTE_COLORS.gradient}
       style={styles.sticker}
     >
       <Text font="delaGothicOne" size="small">

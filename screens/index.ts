@@ -1,4 +1,4 @@
-import AuthScreen from "./AuthScreen/AuthScreen";
+import AuthScreen from "./LoginScreen/LoginScreen";
 import HomeScreen from "./HomeScreen/HomeScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
 import MenuScreen from "./MenuScreen/MenuScreen";

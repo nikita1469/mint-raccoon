@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Svg, { G, Path } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 const DishIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.textTransparent,
+  color = PALETTE_COLORS.textTransparent,
   size = 64,
 }) => (
   <Svg width={size} height={size} viewBox="0 0 64 64" fill="none">

@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { PALLETE_COLORS, PATHS } from "@/shared/const";
+import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { Text } from "@/shared/ui";
 import { ProfileScreen, HomeScreen, MenuScreen, TablesScreen } from "@/screens";
 import { HomeIcon, MenuIcon, ListIcon, UserIcon } from "@/shared/ui/icons";
@@ -12,7 +12,7 @@ export const MainStack = () => {
   const mainStackStyles = {
     headerShown: false,
     tabBarStyle: {
-      backgroundColor: PALLETE_COLORS.primary,
+      backgroundColor: PALETTE_COLORS.primary,
       position: "absolute" as const,
       bottom: 20,
       height: 54,

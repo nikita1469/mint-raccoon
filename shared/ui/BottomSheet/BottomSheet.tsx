@@ -8,7 +8,7 @@ import {
 } from "react";
 import { Animated, Pressable } from "react-native";
 import GorhomBottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { BlurView } from "expo-blur";
 
 const BottomSheet: FC<{
@@ -65,13 +65,13 @@ const BottomSheet: FC<{
           {showBottomSheet && (
             <GorhomBottomSheet
               backgroundStyle={{
-                backgroundColor: PALLETE_COLORS.primary,
+                backgroundColor: PALETTE_COLORS.primary,
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,
               }}
               handleIndicatorStyle={{
                 width: 90,
-                backgroundColor: PALLETE_COLORS.lightGrey,
+                backgroundColor: PALETTE_COLORS.lightGrey,
               }}
               snapPoints={snapPoints}
               onChange={(index) => {

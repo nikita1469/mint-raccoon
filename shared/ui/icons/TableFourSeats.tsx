@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SvgFromXml } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 import { StyleProp, View } from "react-native";
 import { ViewStyle } from "react-native";
@@ -25,7 +25,7 @@ const tableVerticalSvg = (
 </svg>`;
 
 const TableFourSeats: FC<IconProps & { isVertical?: boolean }> = ({
-  color = PALLETE_COLORS.white,
+  color = PALETTE_COLORS.white,
   isVertical = false,
   opacity = 1,
 }) => (

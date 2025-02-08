@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Svg, { ClipPath, Defs, G, Path, Rect } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 <svg
@@ -30,7 +30,7 @@ import { IconProps } from "@/shared/model/types";
 </svg>;
 
 const TimeIcon: FC<IconProps> = ({
-  color = PALLETE_COLORS.textTransparent,
+  color = PALETTE_COLORS.textTransparent,
 }) => (
   <Svg width="21" height="20" viewBox="0 0 21 20" fill="none">
     <G clip-path="url(#clip0_63_4346)">

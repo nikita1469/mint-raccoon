@@ -1,5 +1,5 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { PATHS } from "@/shared/const";
+import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import screensData from "./const/screensData";
@@ -15,6 +15,9 @@ const AppContent = () => {
           initialRouteName={PATHS.MAIN_STACK}
           screenOptions={{
             headerShown: false,
+            contentStyle: {
+              backgroundColor: PALETTE_COLORS.background,
+            },
           }}
         >
           <Stack.Screen name={PATHS.MAIN_STACK} component={MainStack} />

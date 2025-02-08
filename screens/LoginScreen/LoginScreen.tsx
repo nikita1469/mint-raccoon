@@ -3,7 +3,7 @@ import { Layout } from "@/shared/ui";
 import { Header } from "@/widgets";
 import React from "react";
 
-const AuthScreen = () => {
+const LoginScreen = () => {
   return (
     <Layout>
       <Header title="Авторизация" />
@@ -11,4 +11,4 @@ const AuthScreen = () => {
   );
 };
 
-export default AuthScreen;
+export default LoginScreen;

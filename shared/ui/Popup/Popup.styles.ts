@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ThemeColors } from "@/shared/model/types";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 
 export const styles = StyleSheet.create({
   overlay: {
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     width: 151,
     padding: 10,
-    backgroundColor: PALLETE_COLORS.background,
+    backgroundColor: PALETTE_COLORS.background,
     borderRadius: 12,
     gap: 12,
     justifyContent: "center",

@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { BottomSheet, Button, Text } from "@/shared/ui";
 import { useMemo, useState } from "react";
 import { TouchableOpacity, View } from "react-native";

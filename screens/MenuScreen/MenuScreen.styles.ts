@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sortButton: {
-    backgroundColor: PALLETE_COLORS.transparent,
+    backgroundColor: PALETTE_COLORS.transparent,
     borderRadius: 20,
     height: 40,
     width: 40,

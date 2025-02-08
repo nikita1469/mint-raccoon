@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 30,
-    color: PALLETE_COLORS.white,
+    color: PALETTE_COLORS.white,
     paddingHorizontal: 0,
     fontSize: 16,
   },

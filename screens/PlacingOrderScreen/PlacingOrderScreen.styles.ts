@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   orderInfoContainer: {
-    backgroundColor: PALLETE_COLORS.transparent,
+    backgroundColor: PALETTE_COLORS.transparent,
     padding: 10,
     borderRadius: 5,
     alignItems: "stretch",

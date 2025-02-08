@@ -1,4 +1,4 @@
-export const PALLETE_COLORS = {
+export const PALETTE_COLORS = {
   background: "#282828",
   primary: "#078384",
   textPrimary: "#0ABAB5",

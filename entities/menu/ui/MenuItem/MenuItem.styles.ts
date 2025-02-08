@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
+import { PALETTE_COLORS } from "@/shared/const/PALETTE_COLORS";
 import { Dimensions, StyleSheet } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   dishContainer: {
     width: CARD_WIDTH - 32,
     height: CARD_WIDTH - 32,
-    backgroundColor: PALLETE_COLORS.primary,
+    backgroundColor: PALETTE_COLORS.primary,
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   addToCartContainer: {
     gap: "18%",
-    backgroundColor: PALLETE_COLORS.white,
+    backgroundColor: PALETTE_COLORS.white,
     borderRadius: 25,
     height: 40,
     flexDirection: "row",

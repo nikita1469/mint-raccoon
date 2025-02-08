@@ -7,7 +7,7 @@ import { AvatarIcon, PlusIcon } from "@/shared/ui/icons";
 import {
   BOOKINGS_DATA,
   FIELDS_DATA,
-  PALLETE_COLORS,
+  PALETTE_COLORS,
   PATHS,
 } from "@/shared/const";
 import { BookingItem } from "@/entities/booking/ui";
@@ -36,7 +36,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
         >
           <AvatarIcon />
           <Pressable style={styles.deleteButton} onPress={() => {}}>
-            <PlusIcon color={PALLETE_COLORS.black} size={10} />
+            <PlusIcon color={PALETTE_COLORS.black} size={10} />
           </Pressable>
         </TouchableOpacity>
         <BlurView>
