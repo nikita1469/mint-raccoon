@@ -11,6 +11,7 @@ import Tabs from "./Tabs/Tabs";
 import Text from "./Text/Text";
 import BlurView from "./BlurView/BlurView";
 import Counter from "./Counter/Counter";
+import TextField from "./TextField/TextField";
 
 export {
   BottomSheet,
@@ -26,4 +27,5 @@ export {
   Select,
   BlurView,
   Counter,
+  TextField,
 };

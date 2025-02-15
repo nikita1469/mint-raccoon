@@ -2,6 +2,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ImageBackground } from "react-native";
 import screensData from "./const/screensData";
 import { MainStack } from "./stacks/MainStack/MainStack";
 
@@ -9,10 +10,10 @@ const Stack = createNativeStackNavigator();
 
 const AppContent = () => {
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={PATHS.MAIN_STACK}
+          initialRouteName={PATHS.REGISTRATION}
           screenOptions={{
             headerShown: false,
             contentStyle: {

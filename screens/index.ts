@@ -1,4 +1,4 @@
-import AuthScreen from "./LoginScreen/LoginScreen";
+import LoginScreen from "./LoginScreen/LoginScreen";
 import HomeScreen from "./HomeScreen/HomeScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
 import MenuScreen from "./MenuScreen/MenuScreen";
@@ -10,7 +10,8 @@ import PlacingOrderScreen from "./PlacingOrderScreen/PlacingOrderScreen";
 import RegistrationScreen from "./RegistrationScreen/RegistrationScreen";
 
 export {
-  AuthScreen,
+  LoginScreen,
+  RegistrationScreen,
   HomeScreen,
   ProfileScreen,
   MenuScreen,
@@ -19,5 +20,4 @@ export {
   BookingsScreen,
   BookingScreen,
   PlacingOrderScreen,
-  RegistrationScreen,
 };

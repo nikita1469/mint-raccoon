@@ -1,47 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { PALETTE_COLORS, PATHS } from "@/shared/const";
-import { Text } from "@/shared/ui";
+import { PATHS } from "@/shared/const";
 import { ProfileScreen, HomeScreen, MenuScreen, TablesScreen } from "@/screens";
 import { HomeIcon, MenuIcon, ListIcon, UserIcon } from "@/shared/ui/icons";
-import { StyleSheet, View } from "react-native";
 import Tab from "./ui/Tab";
+import { mainStackConfig } from "./const";
 
 const BottomTabs = createBottomTabNavigator();
 
 export const MainStack = () => {
-  const mainStackStyles = {
-    headerShown: false,
-    tabBarStyle: {
-      backgroundColor: PALETTE_COLORS.primary,
-      position: "absolute" as const,
-      bottom: 20,
-      height: 54,
-      marginHorizontal: 20,
-      paddingVertical: 4,
-      borderRadius: 27,
-      borderTopWidth: 0,
-      gap: 4,
-      paddingHorizontal: 28,
-      shadowColor: "#000000",
-      shadowOffset: { width: 10, height: 10 },
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 10,
-    },
-    tabBarItemStyle: {
-      top: 4,
-      height: 46,
-      borderRadius: 23,
-    },
-  };
-
-  const token = true;
-
   return (
-    <BottomTabs.Navigator
-      initialRouteName={PATHS.TABLES}
-      screenOptions={mainStackStyles}
-    >
+    <BottomTabs.Navigator initialRouteName={PATHS.TABLES} screenOptions={mainStackConfig}>
       <BottomTabs.Screen
         name={PATHS.PROFILE}
         component={ProfileScreen}
@@ -49,9 +17,7 @@ export const MainStack = () => {
           tabBarIcon: ({ focused }) => {
             return <UserIcon />;
           },
-          tabBarLabel: ({ focused }) => (
-            <Tab focused={focused} label="Профиль" xOffset={-17} />
-          ),
+          tabBarLabel: ({ focused }) => <Tab focused={focused} label="Профиль" xOffset={-17} />,
         }}
       />
       <BottomTabs.Screen
@@ -61,9 +27,7 @@ export const MainStack = () => {
           tabBarIcon: ({ focused }) => {
             return <MenuIcon />;
           },
-          tabBarLabel: ({ focused }) => (
-            <Tab focused={focused} label="Меню" xOffset={-26} />
-          ),
+          tabBarLabel: ({ focused }) => <Tab focused={focused} label="Меню" xOffset={-26} />,
         }}
       />
       <BottomTabs.Screen
@@ -73,9 +37,7 @@ export const MainStack = () => {
           tabBarIcon: ({ focused }) => {
             return <HomeIcon />;
           },
-          tabBarLabel: ({ focused }) => (
-            <Tab focused={focused} label="Домой" xOffset={-23} />
-          ),
+          tabBarLabel: ({ focused }) => <Tab focused={focused} label="Домой" xOffset={-23} />,
         }}
       />
       <BottomTabs.Screen
@@ -85,9 +47,7 @@ export const MainStack = () => {
           tabBarIcon: ({ focused }) => {
             return <ListIcon />;
           },
-          tabBarLabel: ({ focused }) => (
-            <Tab focused={focused} label="Заказ" xOffset={-26} />
-          ),
+          tabBarLabel: ({ focused }) => <Tab focused={focused} label="Заказ" xOffset={-26} />,
         }}
       />
     </BottomTabs.Navigator>

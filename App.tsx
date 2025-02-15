@@ -1,5 +1,5 @@
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./shared/api/api";
+import { queryClient } from "./shared/api/mintRaccoonApi";
 import AppContent from "./app/AppContent";
 import { useFonts } from "@/shared/lib/hooks/useFonts";
 import * as SplashScreen from "expo-splash-screen";

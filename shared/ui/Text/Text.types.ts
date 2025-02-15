@@ -10,10 +10,12 @@ type TextFont = keyof typeof fontStyles;
 
 export interface TextProps {
   children: ReactNode;
+  onPress?: () => void;
   weight?: 400 | 500 | 700 | 900;
   size?: TextSize;
   font?: TextFont;
   color?: TextColor;
   style?: any;
   align?: "left" | "center" | "right";
+  underline?: boolean;
 }
