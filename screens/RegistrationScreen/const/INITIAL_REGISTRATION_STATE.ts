@@ -3,8 +3,9 @@ export const INITIAL_REGISTRATION_STATE = {
   last_name: "",
   birth_date: "",
   gender: "",
-  phone: "+79004349348",
+  phone: "",
   password: "",
   confirm_password: "",
   code: "",
+  avatar: null,
 };

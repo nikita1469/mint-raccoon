@@ -18,6 +18,8 @@ import TableTwoSeats from "./TableTwoSeats";
 import TableFourSeats from "./TableFourSeats";
 import HallDividerLarge from "./HallDividerLarge";
 import HallDividerSmall from "./HallDividerSmall";
+import UserImageIcon from "./UserImageIcon";
+import CloseIcon from "./CloseIcon";
 
 export {
   BellIcon,
@@ -40,4 +42,6 @@ export {
   TableFourSeats,
   HallDividerLarge,
   HallDividerSmall,
+  UserImageIcon,
+  CloseIcon,
 };

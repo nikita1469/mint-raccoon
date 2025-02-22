@@ -10,19 +10,12 @@ export const styles = StyleSheet.create({
     width: logoWidth,
     height: logoHeight,
   },
-  registrationWrapper: {
+  loginWrapper: {
     flex: 1,
     marginTop: 35,
     alignItems: "center",
   },
   headerText: {
     marginTop: 30,
-  },
-  registrationFooter: {
-    marginTop: 40,
-    flexDirection: "row",
-    gap: 10,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

@@ -14,10 +14,9 @@ interface AuthCodeFieldProps {
   form: any;
   handleChangeField: (field: any, value: string) => void;
   handleResendCode: () => void;
-  isLoading: boolean;
 }
 
-const AuthCodeField = ({ form, handleChangeField, handleResendCode, isLoading }: AuthCodeFieldProps) => {
+const AuthCodeField = ({ form, handleChangeField, handleResendCode }: AuthCodeFieldProps) => {
   const CELL_COUNT = 4;
   const [countdown, setCountdown] = useState(59);
 
@@ -74,11 +73,11 @@ const AuthCodeField = ({ form, handleChangeField, handleResendCode, isLoading }:
           Отправить код еще раз
         </Text>
       )}
-      {isLoading && (
+      {/* {isLoading && (
         <View style={styles.loadingWrapper}>
           <ActivityIndicator />
         </View>
-      )}
+      )} */}
     </View>
   );
 };

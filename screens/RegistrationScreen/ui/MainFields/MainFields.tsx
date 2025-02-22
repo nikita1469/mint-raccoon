@@ -6,7 +6,7 @@ import { FormComponentProps } from "../../model/types";
 
 const MainFields = ({ registrationForm, handleChangeField, setRegistrationStep }: FormComponentProps) => {
   const handleNextStep = () => {
-    setRegistrationStep("code");
+    setRegistrationStep?.("password");
   };
 
   return (
@@ -30,7 +30,7 @@ const MainFields = ({ registrationForm, handleChangeField, setRegistrationStep }
         keyboardType="default"
       />
       <Button onPress={handleNextStep} style={styles.button} variant="secondary">
-        Подтвердить телефон
+        Продолжить регистрацию
       </Button>
     </View>
   );

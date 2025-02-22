@@ -2,6 +2,7 @@ import { PALETTE_COLORS } from "@/shared/const";
 
 const mainStackConfig = {
   headerShown: false,
+  gestureEnabled: false,
   tabBarStyle: {
     backgroundColor: PALETTE_COLORS.primary,
     position: "absolute" as const,

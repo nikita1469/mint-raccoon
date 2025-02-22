@@ -28,8 +28,14 @@ const TablesScreen: FC<TablesScreenProps> = () => {
             Забронируйте столик
           </Text>
           <View style={styles.selectFieldsFrapper}>
-            <Select label="Дата" value="12.01.2025" size="small" onPress={() => {}} />
-            <Select label="Время" value="12:00" size="small" onPress={() => {}} />
+            <Select
+              label="Дата"
+              value="12.01.2025"
+              size="small"
+              variant="transparent"
+              onPress={() => {}}
+            />
+            <Select label="Время" value="12:00" size="small" variant="transparent" onPress={() => {}} />
           </View>
           <HallsList selectedHall={selectedHall} setSelectedHall={setSelectedHall} />
           <View style={styles.tablesSchemaWrapper}>

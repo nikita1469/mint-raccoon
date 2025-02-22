@@ -10,7 +10,7 @@ const PasswordFields = ({
   setRegistrationStep,
 }: FormComponentProps) => {
   const handleNextStep = () => {
-    setRegistrationStep("additional");
+    setRegistrationStep?.("additional");
   };
 
   return (

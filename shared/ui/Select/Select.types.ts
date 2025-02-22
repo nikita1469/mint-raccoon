@@ -1,6 +1,6 @@
 export interface SelectProps {
   label?: string;
-  value: string;
+  value: string | null | undefined | boolean;
   placeholder?: string;
   onPress: () => void;
   flex?: number;

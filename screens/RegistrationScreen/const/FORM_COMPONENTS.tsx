@@ -10,18 +10,11 @@ export const FORM_COMPONENTS = {
       setRegistrationStep={setRegistrationStep}
     />
   ),
-  code: ({
-    registrationForm,
-    handleChangeField,
-    handleSendCode,
-    isLoading,
-    setRegistrationStep,
-  }: FormComponentProps) => (
+  code: ({ registrationForm, handleChangeField, handleSendCode }: FormComponentProps) => (
     <AuthCodeField
       form={registrationForm}
       handleChangeField={handleChangeField}
       handleResendCode={handleSendCode!}
-      isLoading={isLoading!}
     />
   ),
   password: ({ registrationForm, handleChangeField, setRegistrationStep }: FormComponentProps) => (
@@ -31,11 +24,19 @@ export const FORM_COMPONENTS = {
       setRegistrationStep={setRegistrationStep}
     />
   ),
-  additional: ({ registrationForm, handleChangeField, setRegistrationStep }: FormComponentProps) => (
+  additional: ({
+    registrationForm,
+    handleChangeField,
+    setShowBottomSheet,
+    handleRegistration,
+    isRegistrationPending,
+  }: FormComponentProps) => (
     <AdditionalFields
       registrationForm={registrationForm}
       handleChangeField={handleChangeField}
-      setRegistrationStep={setRegistrationStep}
+      setShowBottomSheet={setShowBottomSheet}
+      handleRegistration={handleRegistration}
+      isRegistrationPending={isRegistrationPending}
     />
   ),
 };
