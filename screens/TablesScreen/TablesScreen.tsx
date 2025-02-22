@@ -23,7 +23,7 @@ const TablesScreen: FC<TablesScreenProps> = () => {
     <Layout>
       <Header isLogo isBellButton isBurgerButton />
       <ScrollView contentContainerStyle={styles.tablesScroll}>
-        <BlurView containerStyle={{ flex: 1 }}>
+        <BlurView>
           <Text size="header" font="delaGothicOne" align="center">
             Забронируйте столик
           </Text>

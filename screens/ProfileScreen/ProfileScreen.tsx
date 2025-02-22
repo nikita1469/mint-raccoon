@@ -1,21 +1,25 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, useEffect } from "react";
 import { BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { Pressable, ScrollView, TouchableOpacity, View } from "react-native";
 import { styles } from "./ProfileScreen.styles";
 import { AvatarIcon, PlusIcon } from "@/shared/ui/icons";
-import {
-  BOOKINGS_DATA,
-  FIELDS_DATA,
-  PALETTE_COLORS,
-  PATHS,
-} from "@/shared/const";
+import { BOOKINGS_DATA, FIELDS_DATA, PALETTE_COLORS, PATHS } from "@/shared/const";
 import { BookingItem } from "@/entities/booking/ui";
 import { useNavigation } from "@react-navigation/native";
+import { useUserStore } from "@/entities/user/model/userStore";
+
 interface ProfileScreenProps {}
 
 const ProfileScreen: FC<ProfileScreenProps> = () => {
   const navigation = useNavigation();
+  const userData = useUserStore((state) => ({
+    phone: state.phone,
+    first_name: state.first_name,
+    last_name: state.last_name,
+    birth_date: state.birth_date,
+    gender: state.gender,
+  }));
 
   const handleEditProfile = () => {
     navigation.navigate(PATHS.EDIT_PROFILE as never);
@@ -29,11 +33,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
     <Layout>
       <Header title="Профиль" isBellButton isBurgerButton />
       <ScrollView contentContainerStyle={styles.profileScroll}>
-        <TouchableOpacity
-          style={styles.avatarContainer}
-          activeOpacity={0.8}
-          onPress={() => {}}
-        >
+        <TouchableOpacity style={styles.avatarContainer} activeOpacity={0.8} onPress={() => {}}>
           <AvatarIcon />
           <Pressable style={styles.deleteButton} onPress={() => {}}>
             <PlusIcon color={PALETTE_COLORS.black} size={10} />
@@ -52,9 +52,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
                     {label}
                   </Text>
                 </View>
-                {index === FIELDS_DATA.length - 1 && (
-                  <Divider color="textTransparent" />
-                )}
+                {index === FIELDS_DATA.length - 1 && <Divider color="textTransparent" />}
               </Fragment>
             ))}
           </View>
@@ -66,11 +64,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
           <Text size="base" font="delaGothicOne" color="textPrimary">
             ТЕКУЩЕЕ БРОНИРОВАНИЕ
           </Text>
-          <BookingItem
-            date="30 апреля 2024"
-            table="Столик №1, Зал «Сакура»"
-            isActive={true}
-          />
+          <BookingItem date="30 апреля 2024" table="Столик №1, Зал «Сакура»" isActive={true} />
         </BlurView>
         <BlurView>
           <Text size="base" font="delaGothicOne" color="textPrimary">
@@ -80,9 +74,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
             <Fragment key={id}>
               <Divider color="textTransparent" />
               <BookingItem key={id} table={table} date={date} />
-              {index === BOOKINGS_DATA.length - 1 && (
-                <Divider color="textTransparent" />
-              )}
+              {index === BOOKINGS_DATA.length - 1 && <Divider color="textTransparent" />}
             </Fragment>
           ))}
           <Button variant="outlined" size="small" onPress={handleBookings}>

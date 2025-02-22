@@ -5,16 +5,32 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import screensData from "./const/screensData";
 import { MainStack } from "./stacks/MainStack/MainStack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { useAppInitialization } from "./lib/hooks/useAppInitialization";
+import { VideoSplash } from "@/features";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
 
+SplashScreen.preventAutoHideAsync();
 const Stack = createNativeStackNavigator();
 
 const AppContent = () => {
+  const { initialRoute, fontsLoaded, setIsVideoFinished, shouldShowVideo } = useAppInitialization();
+
+  const handleVideoFinish = useCallback(() => {
+    console.log("Video finish callback triggered");
+    setIsVideoFinished(true);
+  }, [setIsVideoFinished]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName={PATHS.LOGIN}
+            initialRouteName={initialRoute || undefined}
             screenOptions={{
               headerShown: false,
               contentStyle: {
@@ -28,6 +44,7 @@ const AppContent = () => {
             ))}
           </Stack.Navigator>
         </NavigationContainer>
+        {shouldShowVideo && <VideoSplash onVideoFinish={handleVideoFinish} />}
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

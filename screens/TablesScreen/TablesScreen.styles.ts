@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   tablesScroll: {
     marginHorizontal: 20,
-    marginBottom: 60,
+    paddingBottom: 60,
   },
   selectFieldsFrapper: {
     width: "100%",
