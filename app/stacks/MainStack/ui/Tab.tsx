@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { Text } from "@/shared/ui";
 
 const Tab = ({
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   tab: {
     position: "absolute",
     top: -33,
-    backgroundColor: PALLETE_COLORS.secondary,
+    backgroundColor: PALETTE_COLORS.secondary,
     width: 80,
     height: 46,
     borderRadius: 23,

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Svg, { Circle, Path } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 const ARROW_DIRECTION = {
@@ -18,7 +18,7 @@ const ARROW_DIRECTION = {
 
 const ArrowIcon: FC<
   IconProps & { direction?: keyof typeof ARROW_DIRECTION }
-> = ({ color = PALLETE_COLORS.white, direction = "down" }) => (
+> = ({ color = PALETTE_COLORS.white, direction = "down" }) => (
   <Svg
     width={ARROW_DIRECTION[direction].width}
     height={ARROW_DIRECTION[direction].height}

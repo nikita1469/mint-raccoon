@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { BlurView, Button, Counter, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { ScrollView, View } from "react-native";
 import { OrderItem } from "@/entities/order/ui";
 import { PATHS } from "@/shared/const";
@@ -58,8 +58,8 @@ const PlacingOrderScreen: FC<PlacingOrderScreenProps> = () => {
               value={enableOrderTime}
               onValueChange={setEnableOrderTime}
               trackColor={{
-                false: PALLETE_COLORS.grey,
-                true: PALLETE_COLORS.primary,
+                false: PALETTE_COLORS.grey,
+                true: PALETTE_COLORS.primary,
               }}
             />
             <Text color={enableOrderTime ? "white" : "textTransparent"}>

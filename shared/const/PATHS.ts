@@ -1,5 +1,6 @@
 export enum PATHS {
-  AUTH = "/auth",
+  LOGIN = "/login",
+  REGISTRATION = "/registration",
   HOME = "/home",
   PROFILE = "/profile",
   MENU = "/menu",
@@ -9,5 +10,4 @@ export enum PATHS {
   MAIN_STACK = "/main-stack",
   EDIT_PROFILE = "/edit-profile",
   PLACING_ORDER = "/placing-order",
-  REGISTRATION = "/registration",
 }

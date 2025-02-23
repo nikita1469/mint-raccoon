@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
+import { PALETTE_COLORS } from "@/shared/const/PALETTE_COLORS";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -17,11 +17,11 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
     flex: 1,
     minWidth: "45%",
-    borderColor: PALLETE_COLORS.transparent,
+    borderColor: PALETTE_COLORS.transparent,
   },
   hallItemInactive: {
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.primary,
+    borderColor: PALETTE_COLORS.primary,
   },
   gradient: {
     paddingVertical: 5,

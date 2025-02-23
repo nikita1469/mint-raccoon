@@ -1,29 +1,18 @@
-import {
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useRef,
-} from "react";
+import { Dispatch, FC, ReactNode, SetStateAction, useEffect, useRef } from "react";
 import { Animated, Pressable } from "react-native";
 import GorhomBottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { BlurView } from "expo-blur";
+import { BottomSheetProps } from "./BottomSheet.types";
 
-const BottomSheet: FC<{
-  showBottomSheet: boolean;
-  setShowBottomSheet: Dispatch<SetStateAction<string | null>>;
-  snapPoints: string[];
-  children: ReactNode;
-  onAnimate?: (fromIndex: number, toIndex: number) => void;
-}> = ({
+const BottomSheet = <T,>({
   showBottomSheet,
   setShowBottomSheet,
   snapPoints,
   children,
   onAnimate,
-}) => {
+  backgroundColor,
+}: BottomSheetProps<T>) => {
   const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -65,13 +54,13 @@ const BottomSheet: FC<{
           {showBottomSheet && (
             <GorhomBottomSheet
               backgroundStyle={{
-                backgroundColor: PALLETE_COLORS.primary,
+                backgroundColor: backgroundColor || PALETTE_COLORS.primary,
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,
               }}
               handleIndicatorStyle={{
                 width: 90,
-                backgroundColor: PALLETE_COLORS.lightGrey,
+                backgroundColor: PALETTE_COLORS.lightGrey,
               }}
               snapPoints={snapPoints}
               onChange={(index) => {

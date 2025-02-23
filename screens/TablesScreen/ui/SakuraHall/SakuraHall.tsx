@@ -6,10 +6,10 @@ import { BookingTable } from "@/entities/booking/ui";
 import { useBookingStore } from "@/entities/booking/model/bookingStore";
 
 const SakuraHall = () => {
-  const { tableId, updateField } = useBookingStore();
+  const { tableId, setBookingField } = useBookingStore();
 
   const handleTablePress = (id: number) => {
-    updateField("tableId", id === tableId ? null : id);
+    setBookingField("tableId", id === tableId ? null : id);
   };
 
   return (

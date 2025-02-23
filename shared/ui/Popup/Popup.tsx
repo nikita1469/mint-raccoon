@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import { Modal, TouchableOpacity, View } from "react-native";
 
 import { createStyles } from "@/shared/ui/Popup/Popup.styles";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 
 interface PopupProps {
   isVisible: boolean;
@@ -12,7 +12,7 @@ interface PopupProps {
 }
 
 const Popup: FC<PopupProps> = ({ isVisible, onClose, position, children }) => {
-  const styles = createStyles(PALLETE_COLORS);
+  const styles = createStyles(PALETTE_COLORS);
 
   return (
     <Modal visible={isVisible} transparent={true} onRequestClose={onClose}>

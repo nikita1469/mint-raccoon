@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 100,
-    backgroundColor: PALLETE_COLORS.transparent,
+    backgroundColor: PALETTE_COLORS.transparent,
     justifyContent: "center",
     alignItems: "center",
   },

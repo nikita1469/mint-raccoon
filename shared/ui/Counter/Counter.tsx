@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from "react-native";
 import Text from "../Text/Text";
 import { MinusIcon, PlusIcon } from "../icons";
 import { styles } from "./Counter.styles";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 
 interface CounterProps {
   value: number | string;
@@ -40,7 +40,7 @@ const Counter: FC<CounterProps> = ({
         ]}
         onPress={handleDecrease}
       >
-        <MinusIcon color={PALLETE_COLORS.white} />
+        <MinusIcon color={PALETTE_COLORS.white} />
       </TouchableOpacity>
 
       <Text color={disabled ? "textTransparent" : "white"}>{value} мин</Text>
@@ -51,7 +51,7 @@ const Counter: FC<CounterProps> = ({
         ]}
         onPress={handleIncrease}
       >
-        <PlusIcon color={PALLETE_COLORS.white} />
+        <PlusIcon color={PALETTE_COLORS.white} />
       </TouchableOpacity>
     </View>
   );

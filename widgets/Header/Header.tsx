@@ -4,6 +4,8 @@ import { styles } from "./Header.styles";
 import { Image } from "expo-image";
 import { Text } from "@/shared/ui";
 import { useNavigation } from "@react-navigation/native";
+import { Fragment, useState } from "react";
+import { BurgerMenu } from "./ui";
 
 interface HeaderProps {
   isLogo?: boolean;
@@ -13,45 +15,56 @@ interface HeaderProps {
   isBellButton?: boolean;
 }
 
-const Header = ({
-  isLogo,
-  title,
-  isBackButton,
-  isBurgerButton,
-  isBellButton,
-}: HeaderProps) => {
+const Header = ({ isLogo, title, isBackButton, isBurgerButton, isBellButton }: HeaderProps) => {
   const navigation = useNavigation();
 
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
+  const handleBurgerMenu = () => {
+    setIsBurgerMenuOpen(true);
+  };
+
+  const handleCloseBurgerMenu = () => {
+    setIsBurgerMenuOpen(false);
+  };
+
   return (
-    <View style={styles.headerWrapper}>
-      {isBackButton && (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <ArrowBackIcon />
-        </TouchableOpacity>
-      )}
-      {isBellButton && (
-        <TouchableOpacity>
-          <BellIcon />
-        </TouchableOpacity>
-      )}
-      {isLogo && (
-        <Image
-          source={require("../../shared/assets/images/logo.png")}
-          style={styles.headerLogo}
-          contentFit="contain"
-        />
-      )}
-      {title && (
-        <Text font="delaGothicOne" size="header">
-          {title}
-        </Text>
-      )}
-      {isBurgerButton && (
-        <TouchableOpacity>
-          <BurgerIcon />
-        </TouchableOpacity>
-      )}
-    </View>
+    <Fragment>
+      <View style={styles.headerWrapper}>
+        {isBackButton && (
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <ArrowBackIcon />
+          </TouchableOpacity>
+        )}
+        {isBellButton && (
+          <TouchableOpacity>
+            <BellIcon />
+          </TouchableOpacity>
+        )}
+        {isLogo && (
+          <Image
+            source={require("../../shared/assets/images/logo.png")}
+            style={styles.headerLogo}
+            contentFit="contain"
+          />
+        )}
+        {title && (
+          <Text font="delaGothicOne" size="header">
+            {title}
+          </Text>
+        )}
+        {isBurgerButton && (
+          <TouchableOpacity onPress={handleBurgerMenu}>
+            <BurgerIcon />
+          </TouchableOpacity>
+        )}
+      </View>
+      <BurgerMenu
+        onClose={handleCloseBurgerMenu}
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        handleCloseBurgerMenu={handleCloseBurgerMenu}
+      />
+    </Fragment>
   );
 };
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SvgFromXml } from "react-native-svg";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
 
 const hallDividerLargeSvg = `<svg width="6" height="108" viewBox="0 0 6 108" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,7 +8,7 @@ const hallDividerLargeSvg = `<svg width="6" height="108" viewBox="0 0 6 108" fil
 </svg>
 `;
 
-const HallDividerLarge: FC<IconProps> = ({ color = PALLETE_COLORS.white }) => (
+const HallDividerLarge: FC<IconProps> = ({ color = PALETTE_COLORS.white }) => (
   <SvgFromXml xml={hallDividerLargeSvg} opacity={0.5} />
 );
 

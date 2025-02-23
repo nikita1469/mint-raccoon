@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
+import { PALETTE_COLORS } from "@/shared/const/PALETTE_COLORS";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -15,9 +15,9 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   activeTab: {
-    backgroundColor: PALLETE_COLORS.secondary,
+    backgroundColor: PALETTE_COLORS.secondary,
   },
   inactiveTab: {
-    backgroundColor: PALLETE_COLORS.transparent,
+    backgroundColor: PALETTE_COLORS.transparent,
   },
 });

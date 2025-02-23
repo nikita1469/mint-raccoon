@@ -4,7 +4,7 @@ import { styles } from "./BookingScreen.styles";
 import { ScrollView, View } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { PALLETE_COLORS, PATHS } from "@/shared/const";
+import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { useNavigation } from "@react-navigation/native";
 import { OrderItem } from "@/entities/order/ui";
 import { ORDER_DATA } from "@/entities/order/const";
@@ -59,7 +59,7 @@ const BookingScreen = () => {
             <View
               style={[
                 styles.bookingOrderStatus,
-                { backgroundColor: PALLETE_COLORS.orange },
+                { backgroundColor: PALETTE_COLORS.orange },
               ]}
             >
               <Text size="small" font="bold">

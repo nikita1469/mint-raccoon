@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
+import { PALETTE_COLORS } from "@/shared/const/PALETTE_COLORS";
 import { Text } from "@/shared/ui";
 import { LinearGradient } from "expo-linear-gradient";
 import { FC } from "react";
@@ -31,8 +31,8 @@ const HallsList: FC<HallsListProps> = ({ selectedHall, setSelectedHall }) => {
               end={{ x: 1, y: 0 }}
               colors={
                 id === selectedHall
-                  ? PALLETE_COLORS.gradient
-                  : PALLETE_COLORS.gradientTransparent
+                  ? PALETTE_COLORS.gradient
+                  : PALETTE_COLORS.gradientTransparent
               }
               style={[
                 styles.gradient,

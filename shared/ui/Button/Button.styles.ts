@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 import { StyleSheet } from "react-native";
 
 const baseButton = {
@@ -17,21 +17,21 @@ const SIZES = {
 export const styles = StyleSheet.create({
   buttonWrapper: baseButton,
   disabled: {
-    backgroundColor: PALLETE_COLORS.grey,
+    backgroundColor: PALETTE_COLORS.grey,
   },
 });
 
 export const backgroundStyles = StyleSheet.create({
   primary: {
-    backgroundColor: PALLETE_COLORS.primary,
+    backgroundColor: PALETTE_COLORS.primary,
   },
   secondary: {
-    backgroundColor: PALLETE_COLORS.secondary,
+    backgroundColor: PALETTE_COLORS.secondary,
   },
   outlined: {
-    backgroundColor: PALLETE_COLORS.black,
+    backgroundColor: PALETTE_COLORS.black,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.textTransparent,
+    borderColor: PALETTE_COLORS.textTransparent,
   },
 });
 

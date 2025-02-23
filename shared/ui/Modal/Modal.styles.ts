@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ThemeColors } from "@/shared/model/types";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 
 export const styles = StyleSheet.create({
   modalOverlay: {
@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   drawerContainer: {
-    backgroundColor: PALLETE_COLORS.background,
+    backgroundColor: PALETTE_COLORS.background,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     height: 300,
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   modalHandle: {
     width: 32,
     height: 4,
-    backgroundColor: PALLETE_COLORS.lightGrey,
+    backgroundColor: PALETTE_COLORS.lightGrey,
     borderRadius: 2,
     marginTop: 15,
   },

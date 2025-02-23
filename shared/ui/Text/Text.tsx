@@ -5,15 +5,18 @@ import { TextProps } from "./Text.types";
 
 const Text: FC<TextProps> = ({
   children,
+  onPress,
   weight,
   align = "left",
   size = "base",
   font = "regular",
   color = "white",
   style,
+  underline,
 }) => {
   return (
     <RNText
+      onPress={onPress}
       style={[
         size && sizeStyles[size],
         color && colorStyles[color],
@@ -21,6 +24,7 @@ const Text: FC<TextProps> = ({
         font && fontStyles[font],
         style && style,
         align && { textAlign: align },
+        underline && { textDecorationLine: "underline" },
       ]}
     >
       {children}

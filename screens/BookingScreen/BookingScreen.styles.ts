@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { PALLETE_COLORS } from "@/shared/const";
+import { PALETTE_COLORS } from "@/shared/const";
 export const styles = StyleSheet.create({
   bookingScroll: {
     paddingHorizontal: 20,
@@ -13,10 +13,10 @@ export const styles = StyleSheet.create({
     height: 200,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.grey,
+    borderColor: PALETTE_COLORS.grey,
   },
   bookingRowContainer: {
-    backgroundColor: PALLETE_COLORS.transparent,
+    backgroundColor: PALETTE_COLORS.transparent,
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderRadius: 5,

@@ -1,4 +1,4 @@
-import { PALLETE_COLORS } from "@/shared/const/PALLETE_COLORS";
+import { PALETTE_COLORS } from "@/shared/const/PALETTE_COLORS";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: PALLETE_COLORS.lightGrey,
+    backgroundColor: PALETTE_COLORS.lightGrey,
   },
   deleteButton: {
     position: "absolute",
@@ -23,14 +23,15 @@ export const styles = StyleSheet.create({
     right: 0,
     height: 20,
     width: 20,
-    backgroundColor: PALLETE_COLORS.secondary,
+    backgroundColor: PALETTE_COLORS.secondary,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: PALLETE_COLORS.black,
+    borderColor: PALETTE_COLORS.black,
     justifyContent: "center",
     alignItems: "center",
   },
   fieldWrapper: {
     marginVertical: 10,
+    flexDirection: "row",
   },
 });
