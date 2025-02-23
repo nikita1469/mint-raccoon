@@ -32,5 +32,6 @@ export const styles = StyleSheet.create({
   },
   fieldWrapper: {
     marginVertical: 10,
+    flexDirection: "row",
   },
 });

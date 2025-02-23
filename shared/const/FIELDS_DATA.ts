@@ -1,10 +1,10 @@
 const FIELDS_DATA = [
-  { id: "name", label: "Имя" },
-  { id: "surname", label: "Фамилия" },
-  { id: "birthday", label: "Дата рождения" },
+  { id: "first_name", label: "Имя" },
+  { id: "last_name", label: "Фамилия" },
+  { id: "birth_date", label: "Дата рождения" },
   { id: "gender", label: "Пол" },
   { id: "phone", label: "Телефон" },
-  { id: "password", label: "Пароль" },
+  // { id: "password", label: "Пароль" },
 ];
 
 export default FIELDS_DATA;

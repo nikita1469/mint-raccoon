@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
+    flex: 1,
     height: 30,
     color: PALETTE_COLORS.white,
     paddingHorizontal: 0,

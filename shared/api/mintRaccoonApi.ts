@@ -22,21 +22,21 @@ api.interceptors.request.use(async (config) => {
   return config;
 });
 
-api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    if (error.response.status === 401) {
-      const refresh_token = await SecureStore.getItemAsync("refresh_token");
-      if (refresh_token) {
-        const response = await api.post("auth_refresh_jwt/", {
-          refresh: refresh_token,
-        });
-        await SecureStore.setItemAsync("access_token", response.data.access_token);
-        return api(error.config);
-      }
-    }
-    return Promise.reject(error);
-  }
-);
+// api.interceptors.response.use(
+//   (response) => response,
+//   async (error) => {
+//     if ([401, 403].includes(error.response.status)) {
+//       const refresh_token = await SecureStore.getItemAsync("refresh_token");
+//       if (refresh_token) {
+//         const response = await api.post("auth_refresh_jwt/", {
+//           refresh: refresh_token,
+//         });
+//         await SecureStore.setItemAsync("access_token", response.data.access_token);
+//         return api(error.config);
+//       }
+//     }
+//     return Promise.reject(error);
+//   }
+// );
 
 export { api };

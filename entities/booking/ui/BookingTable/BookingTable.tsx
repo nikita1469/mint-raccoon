@@ -28,17 +28,13 @@ const BookingTable = ({
         <TableFourSeats
           isVertical={isVertical}
           opacity={opacity}
-          color={
-            pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white
-          }
+          color={pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white}
         />
       ) : (
         <TableTwoSeats
           isVertical={isVertical}
           opacity={opacity}
-          color={
-            pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white
-          }
+          color={pickedTable === id ? PALETTE_COLORS.secondary : PALETTE_COLORS.white}
         />
       )}
       <Text
@@ -48,7 +44,8 @@ const BookingTable = ({
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: [{ translateX: -7 }, { translateY: -10 }],
+          marginLeft: -6,
+          marginTop: -10,
         }}
       >
         {id}

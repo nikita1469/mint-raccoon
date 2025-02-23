@@ -3,7 +3,7 @@ Mobile app developed using React Native, Expo, Zustand, TypeScript. Based on FSD
 TASKS:
 
 - Бургер меню +
-- Запрос и логика профиля
+- Запрос и логика профиля +
 - Запрос и логика выбора стола/зала
 - Запрос и логика бронирования стола
 - Запрос на получение меню

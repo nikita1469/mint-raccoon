@@ -30,7 +30,8 @@ const AppContent = () => {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName={initialRoute || undefined}
+            initialRouteName={PATHS.LOGIN}
+            // initialRouteName={initialRoute || undefined}
             screenOptions={{
               headerShown: false,
               contentStyle: {

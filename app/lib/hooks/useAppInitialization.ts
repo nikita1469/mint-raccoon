@@ -12,8 +12,6 @@ export const useAppInitialization = () => {
   const [isVideoFinished, setIsVideoFinished] = useState(false);
   const [shouldShowVideo, setShouldShowVideo] = useState(true);
 
-  console.log("Init state:", { fontsLoaded, initialRoute, isVideoFinished, shouldShowVideo });
-
   useEffect(() => {
     const initialize = async () => {
       try {

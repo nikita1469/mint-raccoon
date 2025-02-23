@@ -21,6 +21,8 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
     gender: state.gender,
   }));
 
+  console.log("userData", userData);
+
   const handleEditProfile = () => {
     navigation.navigate(PATHS.EDIT_PROFILE as never);
   };
@@ -51,6 +53,7 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
                   <Text color="textTransparent" style={{ width: "40%" }}>
                     {label}
                   </Text>
+                  <Text style={{ width: "60%" }}>{userData[id as keyof typeof userData]}</Text>
                 </View>
                 {index === FIELDS_DATA.length - 1 && <Divider color="textTransparent" />}
               </Fragment>

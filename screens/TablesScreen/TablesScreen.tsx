@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 import { BlurView, Button, Layout, Select, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
@@ -8,12 +8,19 @@ import { useNavigation } from "@react-navigation/native";
 import { PATHS } from "@/shared/const";
 
 import { styles } from "./TablesScreen.styles";
+import { useGetUserLazyQuery } from "@/entities/user/api/userApi";
 
 interface TablesScreenProps {}
 
 const TablesScreen: FC<TablesScreenProps> = () => {
   const navigation = useNavigation();
   const [selectedHall, setSelectedHall] = useState<string>(HALLS_DATA[0].id);
+
+  const { getUser } = useGetUserLazyQuery();
+
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
 
   const handleBooking = () => {
     navigation.navigate(PATHS.BOOKING as never);
