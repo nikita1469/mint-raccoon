@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { Pressable, ScrollView, TouchableOpacity, View } from "react-native";
@@ -8,10 +8,9 @@ import { BOOKINGS_DATA, FIELDS_DATA, PALETTE_COLORS, PATHS } from "@/shared/cons
 import { BookingItem } from "@/entities/booking/ui";
 import { useNavigation } from "@react-navigation/native";
 import { useUserStore } from "@/entities/user/model/userStore";
+import { useGetBookingsQuery } from "@/entities/booking/api/bookingApi";
 
-interface ProfileScreenProps {}
-
-const ProfileScreen: FC<ProfileScreenProps> = () => {
+const ProfileScreen = () => {
   const navigation = useNavigation();
   const userData = useUserStore((state) => ({
     phone: state.phone,
@@ -19,7 +18,14 @@ const ProfileScreen: FC<ProfileScreenProps> = () => {
     last_name: state.last_name,
     birth_date: state.birth_date,
     gender: state.gender,
+    id: state.id,
   }));
+
+  const { data: bookingsData } = useGetBookingsQuery(userData.id, {
+    enabled: !!userData.id,
+  });
+
+  console.log("bookingsData", bookingsData);
 
   console.log("userData", userData);
 

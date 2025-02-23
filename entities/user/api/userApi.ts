@@ -30,29 +30,40 @@ export const useUploadAvatarMutation = () => {
   });
 };
 
-export const useGetUserLazyQuery = () => {
+const formatUserData = (data: User) => {
+  return {
+    ...data,
+    birth_date: moment(data.birth_date).format("DD.MM.YYYY"),
+    gender: data.gender === "male" ? "Мужской" : "Женский",
+  };
+};
+
+const getUserQuery = (options: { enabled?: boolean } = {}) => {
   const updateUserState = useUserStore((state) => state.updateUserState);
 
-  const query = useQuery({
+  return useQuery({
     queryKey: ["user"],
     queryFn: userApi.getUser,
-    enabled: false,
+    ...options,
     select: (data: User) => {
-      const modifiedData = {
-        ...data,
-        birth_date: moment(data.birth_date).format("DD.MM.YYYY"),
-        gender: data.gender === "male" ? "Мужской" : "Женский",
-      };
-
+      const modifiedData = formatUserData(data);
       updateUserState(modifiedData);
       return modifiedData;
     },
   });
+};
+
+export const useGetUserLazyQuery = () => {
+  const query = getUserQuery({ enabled: false });
 
   return {
     ...query,
     getUser: query.refetch,
   };
+};
+
+export const useGetUserQuery = () => {
+  return getUserQuery();
 };
 
 export const useEditUserMutation = () => {

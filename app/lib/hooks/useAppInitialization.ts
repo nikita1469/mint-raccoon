@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import * as SecureStore from "expo-secure-store";
 import { PATHS } from "@/shared/const";
 import { useGetUserLazyQuery } from "@/entities/user/api/userApi";
@@ -12,13 +12,17 @@ export const useAppInitialization = () => {
   const [isVideoFinished, setIsVideoFinished] = useState(false);
   const [shouldShowVideo, setShouldShowVideo] = useState(true);
 
+  const handleVideoFinish = useCallback(() => {
+    console.log("Video finish callback triggered");
+    setIsVideoFinished(true);
+  }, [setIsVideoFinished]);
+
   useEffect(() => {
     const initialize = async () => {
       try {
         const token = await SecureStore.getItemAsync("access_token");
 
         if (token) {
-          await getUser();
           setInitialRoute(PATHS.MAIN_STACK);
         } else {
           setInitialRoute(PATHS.LOGIN);
@@ -42,5 +46,5 @@ export const useAppInitialization = () => {
     initialize();
   }, [fontsLoaded, initialRoute, isVideoFinished, getUser]);
 
-  return { initialRoute, fontsLoaded, setIsVideoFinished, shouldShowVideo };
+  return { initialRoute, fontsLoaded, setIsVideoFinished, shouldShowVideo, handleVideoFinish };
 };

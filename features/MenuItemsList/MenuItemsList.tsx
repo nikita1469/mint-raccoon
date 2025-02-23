@@ -6,16 +6,10 @@ import { styles } from "./MenuItemsList.styles";
 interface MenuItemsListProps {
   data: any;
   cartItems: { id: string; count: number }[];
-  setCartItems: React.Dispatch<
-    React.SetStateAction<{ id: string; count: number }[]>
-  >;
+  setCartItems: React.Dispatch<React.SetStateAction<{ id: string; count: number }[]>>;
 }
 
-const MenuItemsList: FC<MenuItemsListProps> = ({
-  data,
-  cartItems,
-  setCartItems,
-}) => {
+const MenuItemsList: FC<MenuItemsListProps> = ({ data, cartItems, setCartItems }) => {
   const renderMenuItem = useCallback(
     ({ item }: { item: (typeof data)[0] }) => (
       <MenuItem item={item} cartItems={cartItems} setCartItems={setCartItems} />
@@ -28,6 +22,7 @@ const MenuItemsList: FC<MenuItemsListProps> = ({
       data={data}
       renderItem={renderMenuItem}
       keyExtractor={(item) => item.id}
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.menuList}
       numColumns={2}
       columnWrapperStyle={{ gap: 10 }}

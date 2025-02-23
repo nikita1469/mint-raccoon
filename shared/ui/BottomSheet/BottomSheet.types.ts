@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { Dispatch, SetStateAction } from "react";
 
-export interface BottomSheetProps<T> {
+export type BottomSheetProps<T> = {
   showBottomSheet: boolean;
-  setShowBottomSheet: Dispatch<SetStateAction<T | null>>;
+  setShowBottomSheet: ((value: T | null) => void) | Dispatch<SetStateAction<T | null>>;
   snapPoints: string[];
-  backgroundColor?: string;
   children: ReactNode;
-  onAnimate?: (fromIndex: number, toIndex: number) => void;
-}
+  onAnimate?: (opacity: number, index: number) => void;
+  backgroundColor?: string;
+};
