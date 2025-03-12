@@ -7,13 +7,13 @@ import { INITIAL_REGISTRATION_STATE } from "./const";
 import { FORM_COMPONENTS } from "./const/FORM_COMPONENTS";
 import { RegistrationBottomSheet, RegistrationForm, RegistrationStep } from "./model/types";
 import { GenderSheet } from "@/features";
-import { useUploadAvatarMutation } from "@/entities/user/api/userApi";
 import { DatePicker } from "@/widgets";
-import getRegistrationPayload from "./lib/helpers/getRegistrationPayload";
 import { useNavigation } from "@react-navigation/native";
 import { PATHS } from "@/shared/const";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthLayout } from "@/entities/auth/ui";
+
+import getRegistrationPayload from "./lib/helpers/getRegistrationPayload";
 
 const RegistrationScreen: FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
@@ -30,9 +30,7 @@ const RegistrationScreen: FC = () => {
     data,
   } = useRegistrationMutation();
 
-  const handleSendCode = () => {
-    console.log("handleResendCode");
-  };
+  const handleSendCode = () => {};
 
   const handleChangeField = (
     key: keyof RegistrationForm,
@@ -43,7 +41,7 @@ const RegistrationScreen: FC = () => {
 
   const handleRegistration = () => {
     registration(getRegistrationPayload(registrationForm), {
-      onSuccess: (data) => {
+      onSuccess: () => {
         navigation.navigate(PATHS.MAIN_STACK as never);
       },
     });

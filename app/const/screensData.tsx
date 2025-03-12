@@ -6,6 +6,8 @@ import {
   PlacingOrderScreen,
   RegistrationScreen,
   LoginScreen,
+  NotificationsScreen,
+  ContactsScreen,
 } from "@/screens";
 
 const screensData = [
@@ -15,6 +17,8 @@ const screensData = [
   { name: PATHS.BOOKINGS, component: BookingsScreen },
   { name: PATHS.BOOKING, component: BookingScreen },
   { name: PATHS.PLACING_ORDER, component: PlacingOrderScreen },
+  { name: PATHS.NOTIFICATIONS, component: NotificationsScreen },
+  { name: PATHS.CONTACTS, component: ContactsScreen },
 ];
 
 export default screensData;

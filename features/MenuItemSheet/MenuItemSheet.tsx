@@ -1,4 +1,3 @@
-import { PALETTE_COLORS } from "@/shared/const";
 import { BottomSheet, Button, Text } from "@/shared/ui";
 import { useMemo, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
@@ -15,8 +14,7 @@ const MenuItemSheet = () => {
     <BottomSheet
       showBottomSheet={showBottomSheet === "MenuItemSheet"}
       setShowBottomSheet={setShowBottomSheet}
-      snapPoints={snapPoints}
-    >
+      snapPoints={snapPoints}>
       <View style={styles.menuItemWrapper}>
         <View style={styles.itemImageContainer}>
           <TouchableOpacity style={styles.likeButton} activeOpacity={0.8}>

@@ -1,13 +1,14 @@
 import { useCallback } from "react";
 import { Button, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
-import { Keyboard, ScrollView, TouchableWithoutFeedback, View } from "react-native";
+import { Keyboard, TouchableWithoutFeedback, View } from "react-native";
 import { styles } from "./EditProfileScreen.styles";
 import { FIELDS_DATA } from "@/shared/const";
 import { ProfileField } from "./ui";
 import { useUserStore } from "@/entities/user/model/userStore";
 import { User } from "@/entities/user/model/User.types";
 import { useEditUserMutation } from "@/entities/user/api/userApi";
+
 import moment from "moment";
 
 const EditProfileScreen = () => {
@@ -45,6 +46,7 @@ const EditProfileScreen = () => {
 
       return (
         <ProfileField
+          key={field.id}
           field={field}
           isLast={index === FIELDS_DATA.length - 1}
           profileForm={userData}
@@ -58,8 +60,8 @@ const EditProfileScreen = () => {
 
   return (
     <Layout>
-      <Header title="" isBackButton />
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <Header isBackButton />
+      <TouchableWithoutFeedback key={userData.id} onPress={Keyboard.dismiss}>
         <View style={styles.editProfileWrapper}>
           <Text font="delaGothicOne" size="large">
             РЕДАКТИРОВАНИЕ ПРОФИЛЯ

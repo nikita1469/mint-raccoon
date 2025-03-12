@@ -14,7 +14,7 @@ interface HallsListProps {
 const HallsList: FC<HallsListProps> = ({ selectedHall, setSelectedHall }) => {
   return (
     <View style={styles.hallsListWrapper}>
-      <Text color="textTransparent">Залы</Text>
+      <Text color="textTransparent">Зал</Text>
       <View style={styles.hallsList}>
         {HALLS_DATA.map(({ id, name }) => (
           <TouchableOpacity
@@ -24,8 +24,7 @@ const HallsList: FC<HallsListProps> = ({ selectedHall, setSelectedHall }) => {
               id !== selectedHall && styles.hallItemInactive,
             ]}
             activeOpacity={0.7}
-            onPress={() => setSelectedHall(id)}
-          >
+            onPress={() => setSelectedHall(id)}>
             <LinearGradient
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
@@ -37,9 +36,11 @@ const HallsList: FC<HallsListProps> = ({ selectedHall, setSelectedHall }) => {
               style={[
                 styles.gradient,
                 id !== selectedHall && styles.gradientInactive,
-              ]}
-            >
-              <Text font="delaGothicOne">{name}</Text>
+              ]}>
+              <Text font="delaGothicOne" style={[
+                id === selectedHall && { color: PALETTE_COLORS.white },
+                { fontSize: 12, lineHeight: 22 }
+              ]} color="textPrimary">{name}</Text>
             </LinearGradient>
           </TouchableOpacity>
         ))}

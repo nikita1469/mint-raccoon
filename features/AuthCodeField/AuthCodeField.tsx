@@ -4,8 +4,7 @@ import {
   useBlurOnFulfill,
   Cursor,
 } from "react-native-confirmation-code-field";
-
-import { ActivityIndicator, View } from "react-native";
+import { View } from "react-native";
 import { Text } from "@/shared/ui";
 import { styles } from "./AuthCodeField.styles";
 import { useState, useEffect } from "react";
@@ -73,11 +72,6 @@ const AuthCodeField = ({ form, handleChangeField, handleResendCode }: AuthCodeFi
           Отправить код еще раз
         </Text>
       )}
-      {/* {isLoading && (
-        <View style={styles.loadingWrapper}>
-          <ActivityIndicator />
-        </View>
-      )} */}
     </View>
   );
 };

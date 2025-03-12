@@ -2,7 +2,7 @@ import { TableFourSeats, TableTwoSeats } from "@/shared/ui/icons";
 import { PALETTE_COLORS } from "@/shared/const";
 import { Text } from "@/shared/ui";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
-
+import { styles } from "./BookingTable.styles";
 interface BookingTableProps {
   handleTablePress: (id: number) => void;
   id: number;
@@ -18,12 +18,11 @@ const BookingTable = ({
   id,
   pickedTable,
   type,
-  style,
   isVertical = false,
   opacity = 1,
 }: BookingTableProps) => {
   return (
-    <Pressable onPress={() => handleTablePress(id)} style={style && style}>
+    <Pressable onPress={() => handleTablePress(id)}>
       {type === "four" ? (
         <TableFourSeats
           isVertical={isVertical}
@@ -40,14 +39,7 @@ const BookingTable = ({
       <Text
         font="delaGothicOne"
         color={pickedTable === id ? "secondary" : "white"}
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          marginLeft: -6,
-          marginTop: -10,
-        }}
-      >
+        style={styles.tableNumber}>
         {id}
       </Text>
     </Pressable>

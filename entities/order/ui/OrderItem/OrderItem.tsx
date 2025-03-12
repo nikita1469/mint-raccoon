@@ -29,8 +29,7 @@ const OrderItem = ({ data, isLast }: OrderItemProps) => {
           {
             paddingBottom: isLast ? 0 : 10,
           },
-        ]}
-      >
+        ]}>
         <View style={styles.dishContainer}>
           <DishIcon size={32} color={PALETTE_COLORS.white} />
         </View>

@@ -33,6 +33,11 @@ export const backgroundStyles = StyleSheet.create({
     borderWidth: 1,
     borderColor: PALETTE_COLORS.textTransparent,
   },
+  transparent: {
+    backgroundColor: PALETTE_COLORS.transparent,
+    borderWidth: 1,
+    borderColor: PALETTE_COLORS.secondary,
+  },
 });
 
 export const sizeStyles = StyleSheet.create({

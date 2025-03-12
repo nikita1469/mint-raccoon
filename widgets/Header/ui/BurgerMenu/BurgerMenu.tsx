@@ -5,23 +5,25 @@ import { Text } from "@/shared/ui";
 import { styles } from "./BurgerMenu.styles";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { CloseIcon } from "@/shared/ui/icons";
+import { PATHS } from "@/shared/const";
+import { useNavigation } from "@react-navigation/native";
 
 const burgerMenuItems = [
   {
     title: "Контакты",
-    path: "",
+    path: PATHS.CONTACTS,
   },
   {
     title: "Уведомления",
-    path: "",
+    path: PATHS.NOTIFICATIONS,
   },
   {
     title: "Профиль",
-    path: "",
+    path: PATHS.PROFILE,
   },
   {
     title: "Меню",
-    path: "",
+    path: PATHS.MENU,
   },
 ];
 
@@ -33,6 +35,12 @@ interface BurgerMenuProps {
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose, isBurgerMenuOpen, handleCloseBurgerMenu }) => {
   const { top } = useSafeAreaInsets();
+  const navigation = useNavigation();
+
+  const handleMenuItemPress = (path: string) => {
+    navigation.navigate(path as never);
+    handleCloseBurgerMenu();
+  };
 
   return (
     <Modal visible={isBurgerMenuOpen} animationType="fade" onRequestClose={handleCloseBurgerMenu}>
@@ -52,7 +60,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose, isBurgerMenuOpen, hand
         />
         <View style={styles.burgerMenuItems}>
           {burgerMenuItems.map((item) => (
-            <TouchableOpacity key={item.title} activeOpacity={0.8} hitSlop={14}>
+            <TouchableOpacity 
+              key={item.title} 
+              activeOpacity={0.8} 
+              hitSlop={14}
+              onPress={() => handleMenuItemPress(item.path)}>
               <Text size="large" font="semiBold">
                 {item.title}
               </Text>

@@ -42,6 +42,9 @@ export const colorStyles = StyleSheet.create({
   textTransparent: {
     color: PALETTE_COLORS.textTransparent,
   },
+  alternate: {
+    color: PALETTE_COLORS.alternate,
+  },
 });
 
 export const fontStyles = StyleSheet.create({

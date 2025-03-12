@@ -1,7 +1,8 @@
 import { FC } from "react";
-import Svg, { Circle, Path } from "react-native-svg";
 import { PALETTE_COLORS } from "@/shared/const";
 import { IconProps } from "@/shared/model/types";
+
+import Svg, { Circle, Path } from "react-native-svg";
 
 const ARROW_DIRECTION = {
   down: {
@@ -16,16 +17,12 @@ const ARROW_DIRECTION = {
   },
 };
 
-const ArrowIcon: FC<
-  IconProps & { direction?: keyof typeof ARROW_DIRECTION }
-> = ({ color = PALETTE_COLORS.white, direction = "down" }) => (
+const ArrowIcon: FC<IconProps & { direction?: keyof typeof ARROW_DIRECTION }> = ({ color = PALETTE_COLORS.white, direction = "down" }) => (
   <Svg
     width={ARROW_DIRECTION[direction].width}
     height={ARROW_DIRECTION[direction].height}
     viewBox={`0 0 ${ARROW_DIRECTION[direction].width} ${ARROW_DIRECTION[direction].height}`}
-    fill="none"
-    // style={{ transform: [{ rotate: direction === "down" ? "0deg" : "90deg" }] }}
-  >
+    fill="none">
     <Path
       fill-rule="evenodd"
       clip-rule="evenodd"

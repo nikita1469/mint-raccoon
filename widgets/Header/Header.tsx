@@ -6,6 +6,7 @@ import { Text } from "@/shared/ui";
 import { useNavigation } from "@react-navigation/native";
 import { Fragment, useState } from "react";
 import { BurgerMenu } from "./ui";
+import { PATHS } from "@/shared/const";
 
 interface HeaderProps {
   isLogo?: boolean;
@@ -37,7 +38,7 @@ const Header = ({ isLogo, title, isBackButton, isBurgerButton, isBellButton }: H
           </TouchableOpacity>
         )}
         {isBellButton && (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate(PATHS.NOTIFICATIONS as never)}>
             <BellIcon />
           </TouchableOpacity>
         )}
@@ -53,6 +54,7 @@ const Header = ({ isLogo, title, isBackButton, isBurgerButton, isBellButton }: H
             {title}
           </Text>
         )}
+        {title && !isBurgerButton && (<View style={{ width: 32 }} />)}
         {isBurgerButton && (
           <TouchableOpacity onPress={handleBurgerMenu}>
             <BurgerIcon />

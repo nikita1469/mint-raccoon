@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
 import { PALETTE_COLORS } from "@/shared/const";
+
 export const styles = StyleSheet.create({
   bookingScroll: {
     paddingHorizontal: 20,
     gap: 15,
+    paddingBottom: 56,
   },
   bookingImageWrapper: {
     position: "relative",

@@ -1,5 +1,6 @@
-import { DatePicker } from "@/widgets";
 import React, { Fragment } from "react";
+
+import { DatePicker } from "@/widgets";
 import { useUIStore } from "@/shared/model/state/uiState";
 import { useBookingStore } from "@/entities/booking/model/bookingStore";
 import { BookingState } from "@/entities/booking/model/Booking.types";

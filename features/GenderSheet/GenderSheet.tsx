@@ -5,6 +5,7 @@ import { BottomSheet, Button } from "@/shared/ui";
 import { GenderSheetProps } from "./GenderSheet.types";
 import { styles } from "./GenderSheet.styles";
 import { PALETTE_COLORS } from "@/shared/const";
+
 const GenderSheet = <T extends { [K in keyof T]: T[K] }, S = string>(props: GenderSheetProps<T, S>) => {
   const [gender, setGender] = useState<string>("male");
 
@@ -21,8 +22,7 @@ const GenderSheet = <T extends { [K in keyof T]: T[K] }, S = string>(props: Gend
             selectedValue={gender}
             onValueChange={(itemValue) => setGender(itemValue)}
             style={styles.pickerGenderContainer as StyleProp<TextStyle>}
-            itemStyle={styles.pickerText as StyleProp<TextStyle>}
-          >
+            itemStyle={styles.pickerText as StyleProp<TextStyle>}>
             <Picker.Item label="Мужской" value="male" />
             <Picker.Item label="Женский" value="female" />
           </Picker>

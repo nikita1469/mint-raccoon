@@ -1,20 +1,21 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { PATHS } from "@/shared/const";
-import { ProfileScreen, HomeScreen, MenuScreen, TablesScreen } from "@/screens";
+import { ProfileScreen, HomeScreen, MenuScreen, BookingScreen } from "@/screens";
 import { HomeIcon, MenuIcon, ListIcon, UserIcon } from "@/shared/ui/icons";
-import Tab from "./ui/Tab";
 import { mainStackConfig } from "./const";
+
+import Tab from "./ui/Tab";
 
 const BottomTabs = createBottomTabNavigator();
 
 export const MainStack = () => {
   return (
-    <BottomTabs.Navigator initialRouteName={PATHS.TABLES} screenOptions={mainStackConfig}>
+    <BottomTabs.Navigator initialRouteName={PATHS.HOME} screenOptions={mainStackConfig}>
       <BottomTabs.Screen
         name={PATHS.PROFILE}
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return <UserIcon />;
           },
           tabBarLabel: ({ focused }) => <Tab focused={focused} label="Профиль" xOffset={-17} />,
@@ -24,7 +25,7 @@ export const MainStack = () => {
         name={PATHS.MENU}
         component={MenuScreen}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return <MenuIcon />;
           },
           tabBarLabel: ({ focused }) => <Tab focused={focused} label="Меню" xOffset={-26} />,
@@ -34,17 +35,17 @@ export const MainStack = () => {
         name={PATHS.HOME}
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return <HomeIcon />;
           },
           tabBarLabel: ({ focused }) => <Tab focused={focused} label="Домой" xOffset={-23} />,
         }}
       />
       <BottomTabs.Screen
-        name={PATHS.TABLES}
-        component={TablesScreen}
+        name={PATHS.BOOKING}
+        component={BookingScreen}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return <ListIcon />;
           },
           tabBarLabel: ({ focused }) => <Tab focused={focused} label="Заказ" xOffset={-26} />,

@@ -12,6 +12,7 @@ import Text from "./Text/Text";
 import BlurView from "./BlurView/BlurView";
 import Counter from "./Counter/Counter";
 import TextField from "./TextField/TextField";
+import AlertModal from "./AlertModal/AlertModal";
 
 export {
   BottomSheet,
@@ -26,6 +27,7 @@ export {
   Text,
   Select,
   BlurView,
+  AlertModal,
   Counter,
   TextField,
 };

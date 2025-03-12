@@ -3,7 +3,6 @@ import { Header } from "@/widgets";
 import { styles } from "./BookingScreen.styles";
 import { ScrollView, View } from "react-native";
 import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
 import { PALETTE_COLORS, PATHS } from "@/shared/const";
 import { useNavigation } from "@react-navigation/native";
 import { OrderItem } from "@/entities/order/ui";
@@ -28,13 +27,14 @@ const BookingScreen = () => {
           />
           <BookingSticker title="ЗАЛ «САКУРА»" />
         </View>
-        <BlurView>
+        <BlurView key={1}>
           <Text font="delaGothicOne" color="textPrimary">
-            ИНФОРМАЦИЯ О ПРОФИЛЕ
+            ИНФОРМАЦИЯ О БРОНИРОВАНИИ
           </Text>
           <View>
             {BOOKING_FIELDS_DATA.map(({ label, id }, index) => (
               <BookingField
+                key={id}
                 id={id}
                 label={label}
                 isLast={index === BOOKING_FIELDS_DATA.length - 1}
@@ -42,7 +42,7 @@ const BookingScreen = () => {
             ))}
           </View>
         </BlurView>
-        <BlurView>
+        <BlurView key={2}>
           <Text font="delaGothicOne" color="textPrimary">
             ДЕПОЗИТ
           </Text>
@@ -51,7 +51,7 @@ const BookingScreen = () => {
             <Text color="textTransparent">3000₽</Text>
           </View>
         </BlurView>
-        <BlurView>
+        <BlurView key={3}>
           <View style={styles.bookingOrderTitle}>
             <Text font="delaGothicOne" color="textPrimary">
               ВАШ ЗАКАЗ
@@ -60,8 +60,7 @@ const BookingScreen = () => {
               style={[
                 styles.bookingOrderStatus,
                 { backgroundColor: PALETTE_COLORS.orange },
-              ]}
-            >
+              ]}>
               <Text size="small" font="bold">
                 Ожидает оплату
               </Text>
@@ -69,7 +68,11 @@ const BookingScreen = () => {
           </View>
           <View>
             {ORDER_DATA.map((item, index) => (
-              <OrderItem data={item} isLast={index === ORDER_DATA.length - 1} />
+              <OrderItem
+                key={item.id || index}
+                data={item} 
+                isLast={index === ORDER_DATA.length - 1} 
+              />
             ))}
           </View>
           <View style={styles.bookingRowContainer}>
@@ -78,8 +81,7 @@ const BookingScreen = () => {
           </View>
           <Button
             onPress={() => navigation.navigate(PATHS.PLACING_ORDER as never)}
-            variant="secondary"
-          >
+            variant="secondary">
             Оформить заказ
           </Button>
         </BlurView>

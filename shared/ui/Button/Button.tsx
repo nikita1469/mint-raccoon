@@ -10,7 +10,6 @@ export const Button: FC<ButtonProps> = ({
   size = "medium",
   style,
   variant = "primary",
-  textColor,
   disabled = false,
   isLoading = false,
 }) => {
@@ -49,8 +48,7 @@ export const Button: FC<ButtonProps> = ({
       activeOpacity={0.8}
       onPress={handlePress}
       style={buttonStyles}
-      disabled={disabled || isLoading}
-    >
+      disabled={disabled || isLoading}>
       {renderContent()}
     </TouchableOpacity>
   );

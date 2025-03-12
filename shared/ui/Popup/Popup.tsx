@@ -1,8 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Modal, TouchableOpacity, View } from "react-native";
-
-import { createStyles } from "@/shared/ui/Popup/Popup.styles";
-import { PALETTE_COLORS } from "@/shared/const";
+import { styles } from "./Popup.styles";
 
 interface PopupProps {
   isVisible: boolean;
@@ -12,15 +10,12 @@ interface PopupProps {
 }
 
 const Popup: FC<PopupProps> = ({ isVisible, onClose, position, children }) => {
-  const styles = createStyles(PALETTE_COLORS);
-
   return (
     <Modal visible={isVisible} transparent={true} onRequestClose={onClose}>
       <TouchableOpacity
         style={styles.overlay}
         activeOpacity={1}
-        onPress={onClose}
-      >
+        onPress={onClose}>
         <View
           style={[
             styles.popup,
@@ -28,8 +23,7 @@ const Popup: FC<PopupProps> = ({ isVisible, onClose, position, children }) => {
               top: position.y,
               left: position.x - 130,
             },
-          ]}
-        >
+          ]}>
           {children}
         </View>
       </TouchableOpacity>

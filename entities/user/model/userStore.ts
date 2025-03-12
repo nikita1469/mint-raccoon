@@ -1,22 +1,27 @@
-import { create } from "zustand";
+import { createWithEqualityFn } from "zustand/traditional";
+import { shallow } from "zustand/shallow";
 import { UserActions, UserState } from "./User.types";
 import { INITIAL_USER_STATE } from "../const";
 
-export const useUserStore = create<UserState & UserActions>((set) => ({
-  ...INITIAL_USER_STATE,
+export const useUserStore = createWithEqualityFn<UserState & UserActions>(
+  (set) => ({
+    ...INITIAL_USER_STATE,
 
-  updateUserState: (newState) => {
-    set(newState);
-  },
+    updateUserState: (newState) => {
+      set(newState);
+    },
 
-  updateUserField: (field, value) => {
-    set((state) => ({
-      ...state,
-      [field]: value,
-    }));
-  },
+    updateUserField: (field, value) => {
+      set((state) => ({
+        ...state,
+        [field]: value,
+      }));
+    },
 
-  resetUserState: () => {
-    set(INITIAL_USER_STATE);
-  },
-}));
+    resetUserState: () => {
+      set(INITIAL_USER_STATE);
+    },
+  }),
+  shallow
+);
+

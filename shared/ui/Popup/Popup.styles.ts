@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { ThemeColors } from "@/shared/model/types";
 import { PALETTE_COLORS } from "@/shared/const";
 
 export const styles = StyleSheet.create({

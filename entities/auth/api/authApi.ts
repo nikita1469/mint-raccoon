@@ -1,7 +1,8 @@
 import { api } from "@/shared/api/mintRaccoonApi";
-import * as SecureStore from "expo-secure-store";
 import { AuthResponse, LoginPayload, RegisterPayload } from "../model/Auth.types";
 import { useMutation } from "@tanstack/react-query";
+
+import * as SecureStore from "expo-secure-store";
 
 const authApi = {
   async login(payload: LoginPayload) {

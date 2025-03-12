@@ -12,11 +12,11 @@ const usePopup = () => {
     isPopupVisible: false,
   });
 
-  const buttonRef = useRef<TouchableOpacity>(null);
+  const buttonRef = useRef<typeof TouchableOpacity>(null);
 
   const openPopup = () => {
     if (buttonRef.current) {
-      buttonRef.current.measureInWindow((x, y) => {
+      (buttonRef.current as any).measureInWindow((x: number, y: number) => {
         setPopupParams({
           buttonPosition: { x, y },
           isPopupVisible: true,

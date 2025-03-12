@@ -1,8 +1,9 @@
 import { api } from "@/shared/api/mintRaccoonApi";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { AvatarPayload, User } from "../model/User.types";
+
 import * as SecureStore from "expo-secure-store";
-import { useUserStore } from "../model/userStore";
+
 import moment from "moment";
 
 const userApi = {
@@ -38,18 +39,12 @@ const formatUserData = (data: User) => {
   };
 };
 
-const getUserQuery = (options: { enabled?: boolean } = {}) => {
-  const updateUserState = useUserStore((state) => state.updateUserState);
-
+export const getUserQuery = (options: { enabled?: boolean } = {}) => {
   return useQuery({
     queryKey: ["user"],
     queryFn: userApi.getUser,
     ...options,
-    select: (data: User) => {
-      const modifiedData = formatUserData(data);
-      updateUserState(modifiedData);
-      return modifiedData;
-    },
+    select: (data: User) => formatUserData(data),
   });
 };
 

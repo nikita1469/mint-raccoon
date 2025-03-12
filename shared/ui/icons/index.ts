@@ -20,6 +20,15 @@ import HallDividerLarge from "./HallDividerLarge";
 import HallDividerSmall from "./HallDividerSmall";
 import UserImageIcon from "./UserImageIcon";
 import CloseIcon from "./CloseIcon";
+import DayRoom from "./DayRoom";
+import NightRoom from "./NightRoom";
+import VkIcon from "./VkIcon";
+import TgIcon from "./TgIcon";
+import RaccoonRoom from "./RaccoonRoom";
+import ArrowHallIcon from "./ArrowHallIcon";
+import DoneIcon from "./DoneIcon";
+import RemoveIcon from "./RemoveIcon";
+import ExclamationMarkIcon from "./ExclamationMarkIcon";
 
 export {
   BellIcon,
@@ -44,4 +53,13 @@ export {
   HallDividerSmall,
   UserImageIcon,
   CloseIcon,
+  DayRoom,
+  NightRoom,
+  TgIcon,
+  VkIcon,
+  RaccoonRoom,
+  ArrowHallIcon,
+  DoneIcon,
+  RemoveIcon,
+  ExclamationMarkIcon,
 };

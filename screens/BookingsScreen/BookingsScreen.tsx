@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { Fragment } from "react";
 import { Divider, BlurView, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { ScrollView } from "react-native";
@@ -6,9 +6,7 @@ import { BOOKINGS_DATA } from "@/shared/const";
 import { BookingItem } from "@/entities/booking/ui";
 import { styles } from "./BookingsScreen.styles";
 
-interface BookingsScreenProps {}
-
-const BookingsScreen: FC<BookingsScreenProps> = () => {
+const BookingsScreen = () => {
   return (
     <Layout>
       <Header isBackButton />

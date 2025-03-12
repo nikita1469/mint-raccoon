@@ -1,5 +1,5 @@
-import { Button, Text, TextField } from "@/shared/ui";
 import React, { useState } from "react";
+import { Button, Text, TextField } from "@/shared/ui";
 import { View } from "react-native";
 import { styles } from "./LoginScreen.styles";
 import { useNavigation } from "@react-navigation/native";
@@ -13,11 +13,11 @@ const LoginScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const [loginForm, setLoginForm] = useState<LoginPayload>({ phone: "", password: "" });
 
-  const { mutate: login, isPending: isLoginPending, isError, error, data } = useLoginMutation();
+  const { mutate: login, isPending: isLoginPending } = useLoginMutation();
 
   const handleLogin = () => {
     login(loginForm, {
-      onSuccess: (data) => {
+      onSuccess: () => {
         navigation.navigate(PATHS.MAIN_STACK as never);
       },
     });
@@ -30,20 +30,17 @@ const LoginScreen = () => {
           value={loginForm.phone}
           onChangeText={(value) => setLoginForm({ ...loginForm, phone: value })}
           placeholder="Телефон"
-          keyboardType="default"
-        />
+          keyboardType="default"/>
         <TextField
           value={loginForm.password}
           onChangeText={(value) => setLoginForm({ ...loginForm, password: value })}
           placeholder="Пароль"
-          keyboardType="default"
-        />
+          keyboardType="default"/>
         <Button
           onPress={handleLogin}
           isLoading={isLoginPending}
           style={styles.button}
-          variant="secondary"
-        >
+          variant="secondary">
           Войти
         </Button>
       </View>
@@ -58,10 +55,7 @@ const LoginScreen = () => {
                 animation: "none",
               } as never
             )
-          }
-        >
-          Зарегистрируйтесь
-        </Text>
+          }>Зарегистрируйтесь</Text>
       </View>
     </AuthLayout>
   );

@@ -4,6 +4,7 @@ import { HallDividerSmall, HallDividerLarge } from "@/shared/ui/icons";
 import { styles } from "./SakuraHall.styles";
 import { BookingTable } from "@/entities/booking/ui";
 import { useBookingStore } from "@/entities/booking/model/bookingStore";
+import { ArrowHallIcon } from "@/shared/ui/icons";
 
 const SakuraHall = () => {
   const { tableId, setBookingField } = useBookingStore();
@@ -14,6 +15,9 @@ const SakuraHall = () => {
 
   return (
     <Fragment>
+      <View style={styles.arrowHallIconWrapper}>
+        <ArrowHallIcon />
+      </View>
       <View style={styles.tablesSchemaRow}>
         <HallDividerSmall />
         <BookingTable
@@ -30,22 +34,24 @@ const SakuraHall = () => {
           handleTablePress={handleTablePress}
         />
       </View>
-      <View style={styles.tablesSchemaRow}>
-        <BookingTable
-          type="two"
-          id={3}
-          pickedTable={tableId}
-          handleTablePress={handleTablePress}
-          isVertical
-        />
-        <HallDividerLarge />
-        <BookingTable
-          type="four"
-          id={4}
-          pickedTable={tableId}
-          handleTablePress={handleTablePress}
-          isVertical
-        />
+      <View style={styles.tablesSchemaMiddleRow}>
+        <View style={styles.middleRow}>
+          <BookingTable
+            type="two"
+            id={3}
+            pickedTable={tableId}
+            handleTablePress={handleTablePress}
+            isVertical
+          />
+          <HallDividerLarge />
+          <BookingTable
+            type="four"
+            id={4}
+            pickedTable={tableId}
+            handleTablePress={handleTablePress}
+            isVertical
+          />
+        </View>
         <BookingTable
           type="four"
           id={5}

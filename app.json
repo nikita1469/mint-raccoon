@@ -4,10 +4,11 @@
     "slug": "mint-raccoon",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./shared/assets/images/logo.png",
     "scheme": "mint-raccoon",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "platforms": ["ios", "android"],
     "web": {
       "bundler": "metro"
     },
@@ -17,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./shared/assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.mintraccoon.app"
@@ -26,7 +27,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./shared/assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"

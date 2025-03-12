@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     right: 0,
     height: 20,
     width: 20,
-    backgroundColor: PALETTE_COLORS.secondary,
+    backgroundColor: "#FF3B30",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: PALETTE_COLORS.black,
@@ -33,5 +33,14 @@ export const styles = StyleSheet.create({
   fieldWrapper: {
     marginVertical: 10,
     flexDirection: "row",
+  },
+  logoutContainer: {
+    gap: 12,
+    marginTop: 8,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    color: PALETTE_COLORS.white,
   },
 });

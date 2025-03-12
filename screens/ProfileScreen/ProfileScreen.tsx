@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
+import { Fragment, useState } from "react";
+import { AlertModal, BlurView, Button, Divider, Layout, Text } from "@/shared/ui";
 import { Header } from "@/widgets";
 import { Pressable, ScrollView, TouchableOpacity, View } from "react-native";
 import { styles } from "./ProfileScreen.styles";
@@ -8,7 +8,6 @@ import { BOOKINGS_DATA, FIELDS_DATA, PALETTE_COLORS, PATHS } from "@/shared/cons
 import { BookingItem } from "@/entities/booking/ui";
 import { useNavigation } from "@react-navigation/native";
 import { useUserStore } from "@/entities/user/model/userStore";
-import { useGetBookingsQuery } from "@/entities/booking/api/bookingApi";
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
@@ -20,21 +19,16 @@ const ProfileScreen = () => {
     gender: state.gender,
     id: state.id,
   }));
-
-  const { data: bookingsData } = useGetBookingsQuery(userData.id, {
-    enabled: !!userData.id,
-  });
-
-  console.log("bookingsData", bookingsData);
-
-  console.log("userData", userData);
+  
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleEditProfile = () => {
     navigation.navigate(PATHS.EDIT_PROFILE as never);
   };
 
-  const handleBookings = () => {
-    navigation.navigate(PATHS.BOOKINGS as never);
+  const handleDeleteAccount = () => {
+    setShowDeleteModal(false);
+    navigation.navigate(PATHS.LOGIN as never);
   };
 
   return (
@@ -47,7 +41,7 @@ const ProfileScreen = () => {
             <PlusIcon color={PALETTE_COLORS.black} size={10} />
           </Pressable>
         </TouchableOpacity>
-        <BlurView>
+        <BlurView key={1}>
           <Text font="delaGothicOne" color="textPrimary">
             ИНФОРМАЦИЯ О ПРОФИЛЕ
           </Text>
@@ -69,13 +63,13 @@ const ProfileScreen = () => {
             Изменить
           </Button>
         </BlurView>
-        <BlurView>
+        <BlurView key={2}>
           <Text size="base" font="delaGothicOne" color="textPrimary">
             ТЕКУЩЕЕ БРОНИРОВАНИЕ
           </Text>
           <BookingItem date="30 апреля 2024" table="Столик №1, Зал «Сакура»" isActive={true} />
         </BlurView>
-        <BlurView>
+        <BlurView key={3}>
           <Text size="base" font="delaGothicOne" color="textPrimary">
             ИСТОРИЯ БРОНИРОВАНИЙ
           </Text>
@@ -86,10 +80,27 @@ const ProfileScreen = () => {
               {index === BOOKINGS_DATA.length - 1 && <Divider color="textTransparent" />}
             </Fragment>
           ))}
-          <Button variant="outlined" size="small" onPress={handleBookings}>
-            Посмотреть все
+          <Button
+            variant="outlined"
+            size="small"
+            onPress={() => navigation.navigate(PATHS.BOOKINGS as never)}>
+            Все бронирования
           </Button>
+
+          <View style={styles.logoutContainer}>
+          <Text font="bold" onPress={() => navigation.navigate(PATHS.LOGIN as never)}>Выйти из аккаунта</Text>
+          <Text font="bold" onPress={() => setShowDeleteModal(true)}>
+            Удалить аккаунт
+          </Text>
+          </View>
         </BlurView>
+
+        <AlertModal
+          type="deleteAccount"
+          visible={showDeleteModal}
+          onConfirm={handleDeleteAccount}
+          onCancel={() => setShowDeleteModal(false)}
+        />
       </ScrollView>
     </Layout>
   );

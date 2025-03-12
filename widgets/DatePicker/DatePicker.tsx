@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { StyleProp, TextStyle, View, ViewStyle } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import moment from "moment";
 import { BottomSheet, Button } from "@/shared/ui";
 import { styles } from "./DatePicker.styles";
 import { LARGEST_MONTHS } from "./const";
 import { MONTHS_NAMES, PALETTE_COLORS } from "@/shared/const";
 import { DatePickerProps } from "./DatePicker.types";
+
+import moment from "moment";
 
 const DatePicker = <T extends { [K in keyof T]: T[K] }, S = string>(
   props: DatePickerProps<T, S>

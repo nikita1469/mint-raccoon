@@ -1,4 +1,5 @@
 import * as Font from "expo-font";
+
 import { useCallback, useEffect, useState } from "react";
 
 export const useFonts = () => {

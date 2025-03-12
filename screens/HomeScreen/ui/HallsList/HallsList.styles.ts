@@ -21,12 +21,13 @@ export const styles = StyleSheet.create({
   },
   hallItemInactive: {
     borderWidth: 1,
-    borderColor: PALETTE_COLORS.primary,
+    borderColor: PALETTE_COLORS.textPrimary,
   },
   gradient: {
     paddingVertical: 5,
     paddingHorizontal: 12,
     alignItems: "center",
+    color: PALETTE_COLORS.primary,
   },
   gradientInactive: {
     paddingVertical: 4,

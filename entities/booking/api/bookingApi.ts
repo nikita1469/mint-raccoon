@@ -1,6 +1,6 @@
 import { api } from "@/shared/api/mintRaccoonApi";
 import { Booking, BookingHall, BookingTable } from "../model/Booking.types";
-import { useQuery } from "@tanstack/react-query";
+import { UseMutationOptions, useQuery } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
 
 const bookingApi = {
@@ -26,9 +26,12 @@ const bookingApi = {
   },
 };
 
-export const useCreateBookingMutation = () => {
+export const useCreateBookingMutation = (
+  options?: Omit<UseMutationOptions<Booking, Error, Booking>, 'mutationFn'>
+) => {
   return useMutation({
     mutationFn: bookingApi.createBooking,
+    ...options,
   });
 };
 
